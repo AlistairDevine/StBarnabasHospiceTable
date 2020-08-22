@@ -1,0 +1,30 @@
+﻿@page "/listitem"
+
+@inherits ListItemsBase
+
+<h3>Items</h3>
+
+<!--List of all items in catergories-->
+<div id="items" class="widget">
+    <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right"></button></h3>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Item Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Image</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xzsmkf3bB+OsTpD+xUCvXDGQruKvD2+7adaj3rcRfip/xJ2U8Nj75Pjpuo9a+96RNUhwjyPRPjF0vEHeq9aazA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alist\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csprojAssemblyReference.cache
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.AssemblyInfoInputs.cache
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.AssemblyInfo.cs
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csproj.CoreCompileInputs.cache
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.deps.json
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.dll
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.pdb
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Shared.dll
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Shared.pdb
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csproj.CopyComplete
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.dll
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.pdb
