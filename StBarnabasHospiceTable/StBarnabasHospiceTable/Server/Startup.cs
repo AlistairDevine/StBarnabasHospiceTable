@@ -33,7 +33,6 @@ namespace StBarnabasHospiceTable.Server
             services.AddRazorPages();
             services.AddScoped<ITableRepository, TableRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
-            services.AddScoped<IItemDataService, ItemDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

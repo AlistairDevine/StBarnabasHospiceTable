@@ -1,13 +1,11 @@
 ﻿@page "/listitem"
 
 @inherits ListItemsBase
-
-<h3>Items</h3>
-
+@inject StBarnabasHospiceTable.Client.Services.IItemDataService itemService
 <!--List of all items in catergories-->
 <div id="items" class="widget">
-    <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right"></button></h3>
-    <table>
+    <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right">Add Item</button></h3>
+    <table class="table table-bordered" style="width:90%;">
         <thead>
             <tr>
                 <th scope="col">Item Name</th>
@@ -18,11 +16,11 @@
         <tbody>
             @foreach (var item in Items)
             {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Description</td>
-                <td>@item.Image</td>
-            </tr>
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td><img href="@item.Image" /></td>
+                </tr>
             }
         </tbody>
     </table>
