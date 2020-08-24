@@ -1,25 +1,32 @@
-﻿@page "/listitem"
-
+﻿<!--Page route path-->
+@page "/listitem"
+<!--Page C# code link-->
 @inherits ListItemsBase
+<!--Link to the item service data class, back-end code-->
 @inject StBarnabasHospiceTable.Client.Services.IItemDataService itemService
 <!--List of all items in catergories-->
 <div id="items" class="widget">
+    <!--Title and Button to add new item to the list.-->
     <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right">Add Item</button></h3>
+    <!--Table of listed items-->
     <table class="table table-bordered" style="width:90%;">
+        <!--Table header section-->
         <thead>
             <tr>
                 <th scope="col">Item Name</th>
                 <th scope="col">Description</th>
+                <!--Img size: 300w, 250h-->
                 <th scope="col">Image</th>
             </tr>
         </thead>
+        <!--Table body section-->
         <tbody>
             @foreach (var item in Items)
             {
                 <tr>
                     <td>@item.Name</td>
                     <td>@item.Description</td>
-                    <td><img href="@item.Image" /></td>
+                    <td><img src="@item.Image" /></td>
                 </tr>
             }
         </tbody>
