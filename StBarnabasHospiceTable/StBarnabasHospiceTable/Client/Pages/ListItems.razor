@@ -2,6 +2,8 @@
 @page "/listitem"
 <!--Page C# code link-->
 @inherits ListItemsBase
+
+@using StBarnabasHospiceTable.Shared
 <!--Link to the item service data class, back-end code-->
 @inject StBarnabasHospiceTable.Client.Services.IItemDataService itemService
 <!--List of all items in catergories-->
@@ -32,4 +34,45 @@
         </tbody>
     </table>
 </div>
+@if (ShowPopup == true)
+{
+    <!--This is the popup to add a new item into the list-->
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add item</h3>
+                    <!--Button to close the popup-->
+                    <button type="button" class="close" @onclick="ClosePopup">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+                <!--Save button-->
+                <div class="modal-body">
+                    <EditForm Model="@HRItem" OnValidSubmit="@HandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3">Name: </label>
+                            <InputText id="name" class="form-control col-sm-8" @bind-Value="@HRItem.Name" placeholder="Enter Item Name"></InputText>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3">Description: </label>
+                            <InputTextArea id="description" class="form-control col-sm-8" @bind-Value="@HRItem.Description" placeholder="Enter Item Description"></InputTextArea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3">Image Link: </label>
+                            <InputText id="image" class="form-control col-sm-8" @bind-Value="@HRItem.Image" placeholder="Enter Item Image Link"></InputText>
+                        </div>
+                        <button type="submit" class="btn btn-primary edit-btn">Add Item</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">@Message</div>
+}
 

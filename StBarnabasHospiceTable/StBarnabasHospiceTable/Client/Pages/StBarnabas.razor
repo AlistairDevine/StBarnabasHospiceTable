@@ -16,24 +16,22 @@
             <!--Fifth cell, adds one new cell on the top row-->
             <!--Sixth cell, adds one new cell on the bottom row-->
             <tr>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
-            </tr>
-            <tr>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
-                <td><button type="submit"><span class="oi oi-plus"></span></button></td>
+                <td><button type="submit" @onclick="AddToTable"><span class="oi oi-plus"></span></button></td>
             </tr>
         </tbody>
     </table>
 </div>
 
+@if (ShowPopup)
+{
+
+}
+
 <style>
     .wrapper-control {
-        height:100%;
-        width:90%;
-        text-align:center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
     }
 </style>
 

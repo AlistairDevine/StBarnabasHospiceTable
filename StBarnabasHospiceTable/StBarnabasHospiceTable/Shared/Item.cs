@@ -18,6 +18,7 @@ namespace StBarnabasHospiceTable.Shared
         public string Description { get; set; }
         //Item Image property
         //Only accept image tags e.g. png, jpeg
+        
         public string Image { get; set; }
     }
 }

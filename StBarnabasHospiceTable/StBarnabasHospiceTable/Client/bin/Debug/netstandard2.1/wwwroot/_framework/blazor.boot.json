@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "StBarnabasHospiceTable.Client.dll": "sha256-b48aigAfzVThwVDiOoVpnMUokmDOJUu0PJ5TuUX7BOk=",
+      "StBarnabasHospiceTable.Client.dll": "sha256-LYQjLd7kadx1jyZs4nVUHVDtO4x+2mG9BLSuADN21z8=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -44,7 +44,7 @@
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-6gJMwefpsWLHWsEipZp143xn8k2Ea27upnXqjUT6iNI=",
-      "StBarnabasHospiceTable.Shared.dll": "sha256-7hEj8dY5zhlXGkOSH8bO0yjOrWj9sXYOgpCilltustE=",
+      "StBarnabasHospiceTable.Shared.dll": "sha256-kB4lblqRjBlHixLNK0woLlZffVzxc7JkldPQ2dVml0c=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-oK1Bjv95fH+hSbogUkJE+xDAI203kJG6lL6Sm\/NuPWg=",
       "Microsoft.Extensions.Primitives.dll": "sha256-y\/FyJQOcW2TOcTp7Iuv8brGBzL5ZP0oJdG7ysK+gtKc=",
@@ -61,8 +61,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "StBarnabasHospiceTable.Client.pdb": "sha256-1W\/TXUGNXZM+4rpn3SET1ljyCt6x3R8X12gos+SXupU=",
-      "StBarnabasHospiceTable.Shared.pdb": "sha256-EV5mbiY+RJ\/dbfY\/TkfC9OoieITVC5Ocu+pQkv1SF20="
+      "StBarnabasHospiceTable.Client.pdb": "sha256-KRRVWxZ4IGXw09519aiMqIYnoUy4lrzvZzFzxQGLAvs=",
+      "StBarnabasHospiceTable.Shared.pdb": "sha256-InbBIUuy1SxLfxTaySTIaqDEd\/0zLavnOnsDwctsGS8="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",
