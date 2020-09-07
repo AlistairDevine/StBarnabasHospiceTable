@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Blazorme.Split/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.5",
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Split.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Split.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.6": {
         "type": "package",
         "dependencies": {
@@ -1724,6 +1737,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Blazorme.Split": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "3.2.1",
           "StBarnabasHospiceTable.Shared": "1.0.0",
           "System.Net.Http.Json": "3.2.0"
@@ -1765,6 +1779,19 @@
     }
   },
   "libraries": {
+    "Blazorme.Split/1.0.0": {
+      "sha512": "ZHVsYQNrYPok8VXAR7p1LnZYHpXmJL+fEqBAC8okymHknrBpPPZdMXj2wCvbRCDv6acmgPTWLblcg8jodxuHTQ==",
+      "type": "package",
+      "path": "blazorme.split/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorme.split.1.0.0.nupkg.sha512",
+        "blazorme.split.nuspec",
+        "lib/netstandard2.1/Split.dll",
+        "me.png"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/3.1.6": {
       "sha512": "n0EC0W8jRpM2o1sKKYQpFuvE1sgW7juyEbhVZPcHy9VnHyZYvcIBHVJ6aPCtwqf/16KyqIB1XDVjPnPgyui47Q==",
       "type": "package",

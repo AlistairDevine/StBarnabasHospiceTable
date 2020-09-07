@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
+      "Blazorme.Split/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.5",
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Split.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Split.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.6": {
         "type": "package",
         "dependencies": {
@@ -447,6 +460,19 @@
     }
   },
   "libraries": {
+    "Blazorme.Split/1.0.0": {
+      "sha512": "ZHVsYQNrYPok8VXAR7p1LnZYHpXmJL+fEqBAC8okymHknrBpPPZdMXj2wCvbRCDv6acmgPTWLblcg8jodxuHTQ==",
+      "type": "package",
+      "path": "blazorme.split/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorme.split.1.0.0.nupkg.sha512",
+        "blazorme.split.nuspec",
+        "lib/netstandard2.1/Split.dll",
+        "me.png"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/3.1.6": {
       "sha512": "n0EC0W8jRpM2o1sKKYQpFuvE1sgW7juyEbhVZPcHy9VnHyZYvcIBHVJ6aPCtwqf/16KyqIB1XDVjPnPgyui47Q==",
       "type": "package",
@@ -1648,6 +1674,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "Blazorme.Split >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.Build >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 3.2.1",
@@ -1696,6 +1723,10 @@
     "frameworks": {
       "netstandard2.1": {
         "dependencies": {
+          "Blazorme.Split": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[3.2.1, )"
