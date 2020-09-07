@@ -379,8 +379,8 @@ C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospic
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\Razor\Pages\TableTemplate.razor.g.cs
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\kB4lblqRjBlHixLNK0woLlZffVzxc7JkldPQ2dVml0c=.hash
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\InbBIUuy1SxLfxTaySTIaqDEd-0zLavnOnsDwctsGS8=.hash
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\Ar9bBcp6epP45cryVvMDLiZlLM2UmOGTSqXeWhhSsaQ=.hash
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\LYQjLd7kadx1jyZs4nVUHVDtO4x_2mG9BLSuADN21z8=.hash
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\KRRVWxZ4IGXw09519aiMqIYnoUy4lrzvZzFzxQGLAvs=.hash
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\eSLuBShjw_kNoS3vQmkjTT6_tkfi681hmFt1ZBpEV5A=.hash
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\GEQ1rC22Gv5G8DyRFQcOVH_cf2Ss5huT3Ax8Yu1B8I4=.hash
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\-6zgp9tP4T1F73Ap6Fz9UJU694QaGM7Au6ZPWIggOZU=.hash
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\PwNs1SMjvO9tQf1TuXXYuD-1OTxbyAwGWWLPTVw4p94=.hash
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\SYyyZz0X0UwLC7oA__CI0ygqtm9alD6XhAGvipurp38=.hash
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\QlNSwBhsj13TH4kitl3Pw1gaVqBirM6ODXLYOI51KX8=.hash
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\obj\Debug\netstandard2.1\integrity\m3r13B8QhMZ8RDevpnRQNxE8nNAC7bkfSvchXxlGgBU=.hash

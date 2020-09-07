@@ -1,6 +1,7 @@
 ﻿using StBarnabasHospiceTable.Shared;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace StBarnabasHospiceTable.Client.Services
         {
             var ItemJson =
                 new StringContent(JsonSerializer.Serialize(item), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync($"api/Item", ItemJson);
+            var response = await _httpClient.PostAsync("api/item", ItemJson);
 
             if (response.IsSuccessStatusCode)
             {

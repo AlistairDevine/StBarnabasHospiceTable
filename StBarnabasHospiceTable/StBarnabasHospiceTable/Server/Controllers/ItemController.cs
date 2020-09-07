@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using StBarnabasHospiceTable.Data.Repositories;
+using StBarnabasHospiceTable.Shared;
 
 namespace StBarnabasHospiceTable.Server.Controllers
 {
@@ -11,6 +12,8 @@ namespace StBarnabasHospiceTable.Server.Controllers
     {
         //Connection to the Data repository
         private readonly IItemRepository _itemRepository;
+        //
+        private static readonly List<Item> items = new List<Item>();
 
         public ItemController(IItemRepository itemRepository)
         {
@@ -30,6 +33,12 @@ namespace StBarnabasHospiceTable.Server.Controllers
         public IActionResult GetItemsById(int id)
         {
             return Ok(_itemRepository.GetItemById(id));
+        }
+        //POST: api/items
+        [HttpPost]
+        public void AddItem([FromBody] Item item)
+        {
+            items.Add(item);
         }
     }
 }

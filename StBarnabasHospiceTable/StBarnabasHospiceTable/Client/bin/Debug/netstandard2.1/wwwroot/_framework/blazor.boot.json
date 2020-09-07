@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "StBarnabasHospiceTable.Client.dll": "sha256-LYQjLd7kadx1jyZs4nVUHVDtO4x+2mG9BLSuADN21z8=",
+      "StBarnabasHospiceTable.Client.dll": "sha256-PwNs1SMjvO9tQf1TuXXYuD\/1OTxbyAwGWWLPTVw4p94=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -61,7 +61,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "StBarnabasHospiceTable.Client.pdb": "sha256-KRRVWxZ4IGXw09519aiMqIYnoUy4lrzvZzFzxQGLAvs=",
+      "StBarnabasHospiceTable.Client.pdb": "sha256-SYyyZz0X0UwLC7oA++CI0ygqtm9alD6XhAGvipurp38=",
       "StBarnabasHospiceTable.Shared.pdb": "sha256-InbBIUuy1SxLfxTaySTIaqDEd\/0zLavnOnsDwctsGS8="
     },
     "runtime": {

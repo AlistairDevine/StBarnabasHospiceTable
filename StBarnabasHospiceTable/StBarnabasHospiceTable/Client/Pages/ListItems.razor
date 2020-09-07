@@ -4,8 +4,9 @@
 @inherits ListItemsBase
 
 @using StBarnabasHospiceTable.Shared
+@using StBarnabasHospiceTable.Client.Services
 <!--Link to the item service data class, back-end code-->
-@inject StBarnabasHospiceTable.Client.Services.IItemDataService itemService
+@inject IItemDataService itemService
 <!--List of all items in catergories-->
 <div id="items" class="widget">
     <!--Title and Button to add new item to the list.-->

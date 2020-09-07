@@ -8,12 +8,6 @@ namespace StBarnabasHospiceTable.Client.Pages
 {
     public class StBarnabasBase : ComponentBase
     {
-        public bool ShowPopup = false;
-        //Add items to the table function
-        //Pop up code needed to display items and select which item wanted
-        public void AddToTable()
-        {
 
-        }
     }
 }
