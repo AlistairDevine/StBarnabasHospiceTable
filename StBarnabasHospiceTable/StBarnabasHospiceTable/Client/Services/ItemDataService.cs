@@ -21,7 +21,7 @@ namespace StBarnabasHospiceTable.Client.Services
         {
             var ItemJson =
                 new StringContent(JsonSerializer.Serialize(item), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("api/item", ItemJson);
+            var response = await _httpClient.PostAsJsonAsync($"api/item", ItemJson);
 
             if (response.IsSuccessStatusCode)
             {

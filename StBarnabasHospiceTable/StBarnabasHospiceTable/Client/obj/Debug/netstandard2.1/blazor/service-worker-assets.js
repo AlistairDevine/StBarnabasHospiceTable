@@ -73,7 +73,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-wmgp2jrLzNjHUjhFiK7PewoZPiaZ2NLfwTgcfW24OCA=",
+      "hash": "sha256-S40MaSIEzHWUBk7objXrNj5KBpOuUEd+QiQLlHeLpGg=",
       "url": "_framework\/_bin\/StBarnabasHospiceTable.Client.dll"
     },
     {
@@ -233,7 +233,7 @@
       "url": "_framework\/_bin\/System.ComponentModel.DataAnnotations.dll"
     },
     {
-      "hash": "sha256-kB4lblqRjBlHixLNK0woLlZffVzxc7JkldPQ2dVml0c=",
+      "hash": "sha256-C79LbQCB1Qc87LpeUGQYebAQ5IrDO+MIF55CfM24F6Y=",
       "url": "_framework\/_bin\/StBarnabasHospiceTable.Shared.dll"
     },
     {
@@ -289,11 +289,11 @@
       "url": "_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-3KsntQ\/\/Cr5fxBllchG\/wfcR8ABkqlukXcypAlwOjdU=",
+      "hash": "sha256-NFzFmhmOhSo0p72\/xIPUV2lYn5ZjDtxA0KjQ1G+j6Lc=",
       "url": "_framework\/_bin\/StBarnabasHospiceTable.Client.pdb"
     },
     {
-      "hash": "sha256-InbBIUuy1SxLfxTaySTIaqDEd\/0zLavnOnsDwctsGS8=",
+      "hash": "sha256-ooxswV0H3C4lAAFTo+ZDbYqJbdc9LlL+O6KgWH02Ad8=",
       "url": "_framework\/_bin\/StBarnabasHospiceTable.Shared.pdb"
     },
     {
@@ -313,9 +313,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-62XJFJ45MTR3FukyN0\/k441AncPQ0b09ZFN6v5uSCq4=",
+      "hash": "sha256-Ny9p0eXD0qiV4rUAbOQPf+ZVhzUTT4YjmOB8ckHfnPU=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "eKVTmulS"
+  "version": "piNl4Hkp"
 };

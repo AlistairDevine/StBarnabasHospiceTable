@@ -78,6 +78,13 @@ using StBarnabasHospiceTable.Client.Shared;
 #nullable disable
 #nullable restore
 #line 10 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using StBarnabasHospiceTable.Client.Pages.SessionState;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
 using Blazorme;
 
 #line default
