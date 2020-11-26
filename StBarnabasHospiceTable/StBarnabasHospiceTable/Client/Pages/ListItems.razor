@@ -10,7 +10,7 @@
 <!--List of all items in catergories-->
 <div id="items" class="widget">
     <!--Title and Button to add new item to the list.-->
-    <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right">Add Item</button></h3>
+    <h3>Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right">Add PNG Item</button></h3>
     <!--Table of listed items-->
     <table class="table table-bordered" style="width:90%;">
         <!--Table header section-->
@@ -34,6 +34,9 @@
             }
         </tbody>
     </table>
+    <div>
+        @Message
+    </div>
 </div>
 @if (ShowPopup == true)
 {
@@ -72,8 +75,5 @@
         </div>
     </div>
 }
-else
-{
-    <div class="alert alert-info">@Message</div>
-}
+
 

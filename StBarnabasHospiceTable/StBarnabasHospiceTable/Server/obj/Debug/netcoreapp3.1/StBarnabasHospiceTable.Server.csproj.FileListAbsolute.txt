@@ -1,4 +1,3 @@
-C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Client.StaticWebAssets.xml
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\appsettings.json
@@ -248,3 +247,4 @@ C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospic
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.pdb
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\bin\Debug\netcoreapp3.1\Split.dll
+C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Server\obj\Debug\netcoreapp3.1\scopedcss\bundle\StBarnabasHospiceTable.Server.styles.css

@@ -1707,6 +1707,7 @@
       },
       "frameworks": {
         "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "projectReferences": {
             "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj": {
               "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj"
@@ -1722,6 +1723,7 @@
     },
     "frameworks": {
       "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
         "dependencies": {
           "Blazorme.Split": {
             "target": "Package",
@@ -1761,7 +1763,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

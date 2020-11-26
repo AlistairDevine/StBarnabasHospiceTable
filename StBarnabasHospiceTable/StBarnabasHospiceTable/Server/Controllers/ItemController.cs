@@ -36,7 +36,7 @@ namespace StBarnabasHospiceTable.Server.Controllers
         }
         //POST: api/items
         [HttpPost]
-        public void AddItem([FromBody] Item item)
+        public void AddItemController([FromBody] Item item)
         {
             items.Add(item);
         }

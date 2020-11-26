@@ -680,6 +680,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj": {
               "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj"
@@ -695,6 +696,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -716,7 +718,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

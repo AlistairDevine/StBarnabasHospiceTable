@@ -5,10 +5,10 @@
 @using StBarnabasHospiceTable.Client.Pages.SessionState 
 
 @inherits StBarnabasBase
-@inject CounterState CounterState
+
 
 <!--State management now call the GetCurrentCount() method to get the current count-->
-<p>@CounterState.GetCurrentCount()</p>
+<p></p>
 <style>
     a.button1 {
         border: 0.1em solid #000000;
@@ -157,12 +157,12 @@
     private void buttonCounting()
     {
         //Session State management calls the GetCurrentCount method for the current count
-        int buttonCount = CounterState.GetCurrentCount();
+        //int buttonCount = CounterState.GetCurrentCount();
         //Set the current count to the button value
         buttonOne.ButtonOneValue();
         //...
         //Set Current count on the Session State object
-        CounterState.UpdateCurrentCount(buttonCount);
+        //CounterState.UpdateCurrentCount(buttonCount);
     }
 
     /// <summary>
