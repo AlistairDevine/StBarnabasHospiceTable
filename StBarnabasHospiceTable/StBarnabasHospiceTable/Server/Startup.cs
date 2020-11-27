@@ -29,9 +29,16 @@ namespace StBarnabasHospiceTable.Server
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //ASP.NET Identity, build-in indivdual user login system microsoft.
+            //services.AddDefaultIdentity()
+            //Adds a single page application with an authorization server.
+            //services.AddIdentityServer()
+            //Creates a new API that coexists with an authorization server.
+            //services.AddAuthentication().AddIdentityServerJwt();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
             services.AddScoped<ITableRepository, TableRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
         }
@@ -43,6 +50,8 @@ namespace StBarnabasHospiceTable.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();
+                //RESEARCH
+                //app.UseDatabaseErrorPage();
             }
             else
             {
@@ -56,6 +65,10 @@ namespace StBarnabasHospiceTable.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+            //RESEARCH
+            //app.UseIdentityServer();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

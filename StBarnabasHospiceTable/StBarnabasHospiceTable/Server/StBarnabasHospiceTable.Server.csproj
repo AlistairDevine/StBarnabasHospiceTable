@@ -20,5 +20,10 @@
     <ProjectReference Include="..\Shared\StBarnabasHospiceTable.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 
 </Project>
