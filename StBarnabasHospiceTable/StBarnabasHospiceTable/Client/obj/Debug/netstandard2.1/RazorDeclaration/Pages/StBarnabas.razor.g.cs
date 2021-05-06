@@ -112,7 +112,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
+#line 79 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
        
     /// <summary>
     /// Global variables
@@ -157,16 +157,16 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     //Have display button1, button2, button3, button4...
     //OR
     //Figure out a reference id type for each button
-    int buttonCount = 0;
+    int buttonCount = 1;
+    int buttonSection = 3;
+
     public int Count { get; set; }
     //PWD:: Research
-    private ButtonTemplate buttonOne;
     private void buttonCounting()
     {
         //Session State management calls the GetCurrentCount method for the current count
         //int buttonCount = CounterState.GetCurrentCount();
         //Set the current count to the button value
-        buttonOne.ButtonOneValue();
         //...
         //Set Current count on the Session State object
         //CounterState.UpdateCurrentCount(buttonCount);

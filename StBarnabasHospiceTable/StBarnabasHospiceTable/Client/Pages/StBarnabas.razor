@@ -8,7 +8,7 @@
 
 
 <!--State management now call the GetCurrentCount() method to get the current count-->
-<p></p>
+
 <style>
     a.button1 {
         border: 0.1em solid #000000;
@@ -32,47 +32,17 @@
     <Split>
         <SplitPane SizeInPercentage="33" MinSize="0">
             <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <ButtonTemplate @ref="buttonOne" />
+                <ButtonTemplate buttonCount="buttonCount" @onclick="ShowPopup" />
             </Split>
         </SplitPane>
         <SplitPane SizeInPercentage="33" MinSize="0">
             <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <SplitPane MinSize="0">
-                    @if (displayButton == true)
-                    {
-                        buttonCount = 3;
-                        <div class="container-pane">
-                            <a id="threePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
-                        </div>
-                    }
-                </SplitPane>
-                <SplitPane MinSize="0">
-                    @if (displayButton == true)
-                    {
-                        buttonCount = 4;
-                        <div class="container-pane">
-                            <a id="fourPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
-                        </div>
-                    }
-                </SplitPane>
+                <ButtonTemplate buttonCount="buttonCount" />
             </Split>
         </SplitPane>
         <SplitPane SizeInPercentage="33" MinSize="0">
             <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <SplitPane MinSize="0">
-                    @if (displayButton == true)
-                    {
-                        buttonCount = 5;
-                        <div class="container-pane">
-                            <a id="fivePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
-                        </div>
-                    }
-                </SplitPane>
-                <SplitPane MinSize="0">
-                    <div class="container-pane">
-                        <a id="sixPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
-                    </div>
-                </SplitPane>
+                <ButtonTemplate buttonCount="buttonCount" />
             </Split>
         </SplitPane>
     </Split>
@@ -150,16 +120,16 @@
     //Have display button1, button2, button3, button4...
     //OR
     //Figure out a reference id type for each button
-    int buttonCount = 0;
+    int buttonCount = 1;
+    int buttonSection = 3;
+
     public int Count { get; set; }
     //PWD:: Research
-    private ButtonTemplate buttonOne;
     private void buttonCounting()
     {
         //Session State management calls the GetCurrentCount method for the current count
         //int buttonCount = CounterState.GetCurrentCount();
         //Set the current count to the button value
-        buttonOne.ButtonOneValue();
         //...
         //Set Current count on the Session State object
         //CounterState.UpdateCurrentCount(buttonCount);

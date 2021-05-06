@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Shar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Data", "StBarnabasHospiceTable.Data\StBarnabasHospiceTable.Data.csproj", "{84793C31-8426-4447-82A6-5A5B85B0C92A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StBarnabasHospiceTable.Client.Tests", "StBarnabasHospiceTable.Client.Tests\StBarnabasHospiceTable.Client.Tests.csproj", "{0281DCA3-C34A-4C97-B5BD-7DEB24A5DFDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0281DCA3-C34A-4C97-B5BD-7DEB24A5DFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0281DCA3-C34A-4C97-B5BD-7DEB24A5DFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0281DCA3-C34A-4C97-B5BD-7DEB24A5DFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0281DCA3-C34A-4C97-B5BD-7DEB24A5DFDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

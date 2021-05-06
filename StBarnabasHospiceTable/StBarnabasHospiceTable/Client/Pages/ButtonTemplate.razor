@@ -1,19 +1,49 @@
 ﻿<!--onclick removed for testing purposes-->
-
 <!--Template component tutorial review needed to ensure no missed takes have been made.-->
 
 @using Blazorme
 @using StBarnabasHospiceTable.Client.Pages.SessionState
-
-@for (int i = 0; i < 2; i++)
+<!--TODO : for loop static values (1, 3) need to be dynamic values-->
+@for (int i = buttonCount; i < buttonLimit; i++)
 {
-    <SplitPane>
-        <div class="container-pane">
-            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px"></a>
-        </div>
+    <SplitPane MinSize="0">
+        @if (displayButton == true)
+        {
+            <div class="container-pane">
+                <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+            </div>
+            <p>@i</p>
+        }
     </SplitPane>
 }
 
+@if (imagePopup == true)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select image </h3>
+                    <!--Button to close the popup-->
+                    <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
+                </div>
+                <div class="modal-body">
+                    <!--Selection options dropdown list-->
+                    <select class="form-control selectpicker">
+                        <option>--Select--</option>
+                        @*@foreach (var item in Item)
+                        {
+                            <option value="@item.ItemId">@item.Name</option>
+                        }*@
+                    </select>
+                </div>
+                <div class="modal-footer" style="text-align:center">
+                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 <style>
     a.button1 {
@@ -36,10 +66,33 @@
 
 @code {
     bool displayButton = true;
-    int buttonCount = 0;
+    [Parameter] public int buttonCount { get; set; }
+    [Parameter] public int buttonSection { get; set; }
+    int buttonLimit = 3;
 
-    public void ButtonOneValue()
+    bool imagePopup = false;
+
+    void CloseButton()
     {
-        buttonCount = 1;
+        displayButton = false;
+    }
+    void ShowButton()
+    {
+        displayButton = true;
+    }
+
+    void ClosePopup()
+    {
+        imagePopup = false;
+    }
+    void ShowPopup()
+    {
+        imagePopup = true;
+    }
+
+    void EventHandleSelect()
+    {
+        ClosePopup();
+        CloseButton();
     }
 }

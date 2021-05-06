@@ -76,14 +76,14 @@ using StBarnabasHospiceTable.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 4 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
 using Blazorme;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 5 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
 using StBarnabasHospiceTable.Client.Pages.SessionState;
 
 #line default
@@ -97,14 +97,37 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 67 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
        
     bool displayButton = true;
-    int buttonCount = 0;
+    [Parameter] public int buttonCount { get; set; }
+    [Parameter] public int buttonSection { get; set; }
+    int buttonLimit = 3;
 
-    public void ButtonOneValue()
+    bool imagePopup = false;
+
+    void CloseButton()
     {
-        buttonCount = 1;
+        displayButton = false;
+    }
+    void ShowButton()
+    {
+        displayButton = true;
+    }
+
+    void ClosePopup()
+    {
+        imagePopup = false;
+    }
+    void ShowPopup()
+    {
+        imagePopup = true;
+    }
+
+    void EventHandleSelect()
+    {
+        ClosePopup();
+        CloseButton();
     }
 
 #line default
