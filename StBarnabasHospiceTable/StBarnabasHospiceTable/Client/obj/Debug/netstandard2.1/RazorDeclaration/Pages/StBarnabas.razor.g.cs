@@ -112,7 +112,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 79 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
+#line 33 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
        
     /// <summary>
     /// Global variables

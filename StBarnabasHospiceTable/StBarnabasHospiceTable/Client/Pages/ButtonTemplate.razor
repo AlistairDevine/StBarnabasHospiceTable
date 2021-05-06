@@ -3,19 +3,70 @@
 
 @using Blazorme
 @using StBarnabasHospiceTable.Client.Pages.SessionState
-<!--TODO : for loop static values (1, 3) need to be dynamic values-->
-@for (int i = buttonCount; i < buttonLimit; i++)
-{
-    <SplitPane MinSize="0">
-        @if (displayButton == true)
-        {
-            <div class="container-pane">
-                <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
-            </div>
-            <p>@i</p>
-        }
-    </SplitPane>
-}
+<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height:600px">
+    <Split>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane">
+                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+    </Split>
+</div>
 
 @if (imagePopup == true)
 {

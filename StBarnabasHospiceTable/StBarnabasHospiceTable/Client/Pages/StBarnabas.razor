@@ -28,53 +28,7 @@
     }
 </style>
 
-<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height:600px">
-    <Split>
-        <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <ButtonTemplate buttonCount="buttonCount" @onclick="ShowPopup" />
-            </Split>
-        </SplitPane>
-        <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <ButtonTemplate buttonCount="buttonCount" />
-            </Split>
-        </SplitPane>
-        <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <ButtonTemplate buttonCount="buttonCount" />
-            </Split>
-        </SplitPane>
-    </Split>
-</div>
-
-@if (imagePopup == true)
-{
-    <div class="modal" tabindex="-1" style="display:block" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Select image </h3>
-                    <!--Button to close the popup-->
-                    <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
-                </div>
-                <div class="modal-body">
-                    <!--Selection options dropdown list-->
-                    <select class="form-control selectpicker">
-                        <option>--Select--</option>
-                        @foreach (var item in Items)
-                        {
-                            <option value="@item.ItemId">@item.Name</option>
-                        }
-                    </select>
-                </div>
-                <div class="modal-footer" style="text-align:center">
-                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+<ButtonTemplate/>
 
 @code {
     /// <summary>

@@ -97,7 +97,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 118 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
        
     bool displayButton = true;
     [Parameter] public int buttonCount { get; set; }
