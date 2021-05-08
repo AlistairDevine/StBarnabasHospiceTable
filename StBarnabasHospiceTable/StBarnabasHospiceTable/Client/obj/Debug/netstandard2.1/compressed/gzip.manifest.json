@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\lnAaDG8cu1ggERt9CjYGWfyIwvsHLRqdRJ3xH4m2vnU=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\gQT8oaUAd_d8QRr3BBqmYdan5VEnpFAYiGZ8gOh7ZWE=.hash",
       "Source": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\StBarnabasHospiceTable.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/StBarnabasHospiceTable.Client.dll.gz"
     },
@@ -271,7 +271,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\1BUJ2CQEWWxIbEuOtXOpdR85yDEPotF_WS9ZcceJWmw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\2fhPMm8cOXPYWYzDgrHpnC58VYfs8AqAFTM6ubXW4RE=.hash",
       "Source": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\StBarnabasHospiceTable.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/StBarnabasHospiceTable.Client.pdb.gz"
     },
@@ -301,12 +301,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\39WDMTEAHxv4NgDu3DJ4cSXPJb0pXj38KF9Sz3AajlU=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\F4xuxeeDGG786xZ4841CM1y2ks3Mc2g3A_jtBi28eyk=.hash",
       "Source": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\bcYBRKaOg1DVeYKEmFZURrxtd77m8jbiRuiis7RtOjs=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\S-KM2yCZQkW3HEpx3bb2C0NMs0O4xKw0zaZ1MQqNUMA=.hash",
       "Source": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
     }

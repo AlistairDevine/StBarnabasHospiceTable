@@ -82,10 +82,10 @@
                     <!--Selection options dropdown list-->
                     <select class="form-control selectpicker">
                         <option>--Select--</option>
-                        @*@foreach (var item in Item)
+                        @foreach (var item in Items)
                         {
                             <option value="@item.ItemId">@item.Name</option>
-                        }*@
+                        }
                     </select>
                 </div>
                 <div class="modal-footer" style="text-align:center">
@@ -146,4 +146,8 @@
         ClosePopup();
         CloseButton();
     }
+
+    public List<Item> Items { get; set; } = new List<Item>();
+
+    //TODO : OnInitialize method
 }

@@ -76,6 +76,20 @@ using StBarnabasHospiceTable.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using StBarnabasHospiceTable.Client.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using StBarnabasHospiceTable.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
 using Blazorme;
 
@@ -129,6 +143,8 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         ClosePopup();
         CloseButton();
     }
+
+    public List<Item> Items { get; set; } = new List<Item>();
 
 #line default
 #line hidden

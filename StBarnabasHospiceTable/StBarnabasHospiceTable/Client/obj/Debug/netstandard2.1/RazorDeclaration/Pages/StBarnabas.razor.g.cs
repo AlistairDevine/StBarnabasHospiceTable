@@ -117,39 +117,8 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     /// <summary>
     /// Global variables
     /// </summary>
-    [Inject]
-    public IItemDataService itemService { get; set; }
+    [Inject] public IItemDataService itemService { get; set; }
     public List<Item> Items { get; set; } = new List<Item>();
-
-    /// <summary>
-    /// Popup code
-    /// </summary>
-    bool imagePopup = false;
-    bool displayButton = true;
-
-    void CloseButton()
-    {
-        displayButton = false;
-    }
-    void ShowButton()
-    {
-        displayButton = true;
-    }
-
-    void ClosePopup()
-    {
-        imagePopup = false;
-    }
-    void ShowPopup()
-    {
-        imagePopup = true;
-    }
-
-    void EventHandleSelect()
-    {
-        ClosePopup();
-        CloseButton();
-    }
 
     /// <summary>
     /// Button / Session State  code
@@ -160,7 +129,6 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     int buttonCount = 1;
     int buttonSection = 3;
 
-    public int Count { get; set; }
     //PWD:: Research
     private void buttonCounting()
     {
@@ -178,14 +146,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
-        ClosePopup();
-        ShowButton();
         Items = (await itemService.GetAllItems()).ToList();
-
-        if (Count != 0)
-        {
-            Items = Items.Take(Count).ToList();
-        }
     }
 
 #line default

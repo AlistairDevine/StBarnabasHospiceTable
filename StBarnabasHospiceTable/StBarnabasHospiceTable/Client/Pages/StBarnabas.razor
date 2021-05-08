@@ -6,7 +6,7 @@
 
 @inherits StBarnabasBase
 
-
+<h3>Object Table</h3>
 <!--State management now call the GetCurrentCount() method to get the current count-->
 
 <style>
@@ -34,39 +34,8 @@
     /// <summary>
     /// Global variables
     /// </summary>
-    [Inject]
-    public IItemDataService itemService { get; set; }
+    [Inject] public IItemDataService itemService { get; set; }
     public List<Item> Items { get; set; } = new List<Item>();
-
-    /// <summary>
-    /// Popup code
-    /// </summary>
-    bool imagePopup = false;
-    bool displayButton = true;
-
-    void CloseButton()
-    {
-        displayButton = false;
-    }
-    void ShowButton()
-    {
-        displayButton = true;
-    }
-
-    void ClosePopup()
-    {
-        imagePopup = false;
-    }
-    void ShowPopup()
-    {
-        imagePopup = true;
-    }
-
-    void EventHandleSelect()
-    {
-        ClosePopup();
-        CloseButton();
-    }
 
     /// <summary>
     /// Button / Session State  code
@@ -77,7 +46,6 @@
     int buttonCount = 1;
     int buttonSection = 3;
 
-    public int Count { get; set; }
     //PWD:: Research
     private void buttonCounting()
     {
@@ -95,13 +63,6 @@
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
-        ClosePopup();
-        ShowButton();
         Items = (await itemService.GetAllItems()).ToList();
-
-        if (Count != 0)
-        {
-            Items = Items.Take(Count).ToList();
-        }
     }
 } 
