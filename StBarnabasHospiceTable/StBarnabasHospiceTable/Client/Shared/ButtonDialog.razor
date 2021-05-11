@@ -1,0 +1,73 @@
+﻿@using StBarnabasHospiceTable.Shared
+
+@if (showDialog == true)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Select image </h3>
+                    <!--Button to close the popup-->
+                    <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="@ClosePopup"></a>
+                </div>
+                <div class="modal-body">
+                    <!--Selection options dropdown list-->
+                    <select class="form-control selectpicker">
+                        <option>--Select--</option>
+                        @foreach (var item in Items)
+                        {
+                            <option value="@item.ItemId">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer" style="text-align:center">
+                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (imagePath != null)
+{
+    <img src="@imagePath" alt="Sample Image" width="150px" />
+}
+
+@code {
+    //TODO : Grab items from the database
+    public List<Item> Items { get; set; } = new List<Item>();
+    string imagePath = null;
+
+    public bool showDialog = false;
+    [Parameter] public EventCallback<bool> CloseEventCallback { get; set; }
+
+    /// <summary>
+    /// Popup code
+    /// </summary>
+
+    void ClosePopup()
+    {
+        showDialog = false;
+        StateHasChanged();
+    }
+
+    void ShowPopup()
+    {
+        //TODO : ResetDialog, create new image item object
+        showDialog = true;
+        StateHasChanged();
+    }
+
+    protected async Task EventHandleSelect()
+    {
+        showDialog = false;
+        await CloseEventCallback.InvokeAsync(true);
+        StateHasChanged();
+    }
+
+    //TODO : async method
+    private List<Item> SelectItem()
+    {
+        return null;
+    }
+}

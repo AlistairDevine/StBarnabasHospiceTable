@@ -11,6 +11,7 @@ using StBarnabasHospiceTable.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using StBarnabasHospiceTable.Client.Services;
 using Microsoft.Net.Http.Headers;
+using StBarnabasHospiceTable.Client.Pages.SessionState;
 
 namespace StBarnabasHospiceTable.Server
 {

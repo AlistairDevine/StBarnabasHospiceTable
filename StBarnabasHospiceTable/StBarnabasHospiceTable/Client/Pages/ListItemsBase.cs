@@ -34,7 +34,7 @@ namespace StBarnabasHospiceTable.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            ShowPopup = false;
+            ClosePopup();
             Items = (await itemService.GetAllItems()).ToList();
         }
         public async Task HandleValidSubmit()

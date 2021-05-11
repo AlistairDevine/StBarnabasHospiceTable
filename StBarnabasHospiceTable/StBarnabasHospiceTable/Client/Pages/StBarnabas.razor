@@ -2,13 +2,10 @@
 @using Blazorme
 @using StBarnabasHospiceTable.Shared
 @using StBarnabasHospiceTable.Client.Services
-@using StBarnabasHospiceTable.Client.Pages.SessionState 
-
-@inherits StBarnabasBase
-
+@using StBarnabasHospiceTable.Client.Pages.SessionState
 
 <!--State management now call the GetCurrentCount() method to get the current count-->
-<p></p>
+
 <style>
     a.button1 {
         border: 0.1em solid #000000;
@@ -31,8 +28,16 @@
 <div class="container-fluid border border-primary" style="text-align:center; width: 100%; height:600px">
     <Split>
         <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <ButtonTemplate @ref="buttonOne" />
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5" DefaultMinSize="0">
+                @if (displayButton == true)
+                {
+                    <ButtonTemplate @ref="buttonOne" />
+                }
+                else if (displayButton == false)
+                {
+                    <!--Rerender???-->
+                    <img alt="itemImage" src="@imageOne" placeholder="" />
+                }
             </Split>
         </SplitPane>
         <SplitPane SizeInPercentage="33" MinSize="0">
@@ -40,7 +45,6 @@
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        buttonCount = 3;
                         <div class="container-pane">
                             <a id="threePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
                         </div>
@@ -49,7 +53,6 @@
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        buttonCount = 4;
                         <div class="container-pane">
                             <a id="fourPane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
                         </div>
@@ -62,7 +65,6 @@
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        buttonCount = 5;
                         <div class="container-pane">
                             <a id="fivePane" class="oi oi-plus btn button1" aria-hidden="true" @onclick="ShowPopup" style="border-radius:35%; padding:50px"></a>
                         </div>
@@ -78,46 +80,20 @@
     </Split>
 </div>
 
-@if (imagePopup == true)
-{
-    <div class="modal" tabindex="-1" style="display:block" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Select image </h3>
-                    <!--Button to close the popup-->
-                    <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
-                </div>
-                <div class="modal-body">
-                    <!--Selection options dropdown list-->
-                    <select class="form-control selectpicker">
-                        <option>--Select--</option>
-                        @foreach (var item in Items)
-                        {
-                            <option value="@item.ItemId">@item.Name</option>
-                        }
-                    </select>
-                </div>
-                <div class="modal-footer" style="text-align:center">
-                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+<ButtonDialog />
 
 @code {
     /// <summary>
     /// Global variables
     /// </summary>
-    [Inject]
-    public IItemDataService itemService { get; set; }
+
+    //[Inject] public IItemDataService itemService { get; set; }
     public List<Item> Items { get; set; } = new List<Item>();
 
     /// <summary>
     /// Popup code
     /// </summary>
-    bool imagePopup = false;
+    [Parameter]public bool imagePopup { get; set; } = false;
     bool displayButton = true;
 
     void CloseButton()
@@ -150,20 +126,10 @@
     //Have display button1, button2, button3, button4...
     //OR
     //Figure out a reference id type for each button
-    int buttonCount = 0;
     public int Count { get; set; }
     //PWD:: Research
     private ButtonTemplate buttonOne;
-    private void buttonCounting()
-    {
-        //Session State management calls the GetCurrentCount method for the current count
-        //int buttonCount = CounterState.GetCurrentCount();
-        //Set the current count to the button value
-        buttonOne.ButtonOneValue();
-        //...
-        //Set Current count on the Session State object
-        //CounterState.UpdateCurrentCount(buttonCount);
-    }
+
 
     /// <summary>
     /// Rendering code
@@ -171,13 +137,22 @@
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
-        ClosePopup();
+        ShowPopup();
         ShowButton();
-        Items = (await itemService.GetAllItems()).ToList();
+        //Items = (await itemService.GetAllItems()).ToList();
 
-        if (Count != 0)
-        {
-            Items = Items.Take(Count).ToList();
-        }
+        //if (Count != 0)
+        //{
+        //    Items = Items.Take(Count).ToList();
+        //}
+
+    }
+    string imageOne { get; set; }
+
+    Item modelItem { get; set; } = new Item();
+
+    public void modelProcessor()
+    {
+        modelItem.Image = imageOne;
     }
 } 

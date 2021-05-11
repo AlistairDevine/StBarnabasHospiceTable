@@ -1,17 +1,23 @@
 ﻿<!--onclick removed for testing purposes-->
-
 <!--Template component tutorial review needed to ensure no missed takes have been made.-->
-
+@using StBarnabasHospiceTable.Client.Shared
+@using StBarnabasHospiceTable.Shared
 @using Blazorme
-@using StBarnabasHospiceTable.Client.Pages.SessionState
-
-@for (int i = 0; i < 2; i++)
+@inject ButtonState ButtonState
+<!--State Management for button id-->
+@for (int i = 1; i < 3; i++)
 {
     <SplitPane>
         <div class="container-pane">
-            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px"></a>
+            <a class="oi oi-plus btn button1" aria-hidden="true" @onclick="DialogShow" style="border-radius:35%; padding:50px"></a>
         </div>
     </SplitPane>
+    if (i != null)
+    {
+        buttonId = i;
+        <p>@buttonId</p>
+        buttonId = 0;
+    }
 }
 
 
@@ -34,12 +40,53 @@
     }
 </style>
 
-@code {
-    bool displayButton = true;
-    int buttonCount = 0;
 
-    public void ButtonOneValue()
+<!-- TODO : Eventcallback to close the dialog popup??-->
+<ButtonDialog />
+
+@code {
+
+    public List<Item> Items { get; set; } = new List<Item>();
+
+    private int buttonId { get; set; }
+
+    /// <summary>
+    /// Popup code
+    /// </summary>
+    bool displayButton = true;
+    //public EventCallback<bool> SetDialogPopup { get; set; }
+
+    void CloseButton()
     {
-        buttonCount = 1;
+        displayButton = false;
     }
+    void ShowButton()
+    {
+        displayButton = true;
+    }
+
+    void ClosePopup()
+    {
+        showDialog = false;
+        StateHasChanged();
+    }
+    void ShowPopup()
+    {
+        showDialog = true;
+        Console.WriteLine("ShowPopup method worked");
+        StateHasChanged();
+    }
+
+    protected async Task EventHandleSelect()
+    {
+        showDialog = false;
+        await CloseEventCallback.InvokeAsync(true);
+        StateHasChanged();
+    }
+
+    bool showDialog = false;
+    [Parameter] public EventCallback<bool> CloseEventCallback { get; set; }
+    void DialogShow() => showDialog = true;
+    void DialogCancel() => showDialog = false;
+
 }

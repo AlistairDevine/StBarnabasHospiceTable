@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace StBarnabasHospiceTable.Client.Pages.SessionState
 {
-    public class CounterState
+    public class ButtonState
     {
         //Current button countervalue for the entire application.
         private int _buttonCount = 0;
@@ -13,18 +13,19 @@ namespace StBarnabasHospiceTable.Client.Pages.SessionState
         public event EventHandler StateChanged;
 
         //This will always return the current count.
-        public int GetCurrentCount()
+        public async Task<int> GetCurrentState()
         {
             return _buttonCount;
         }
         //This method will be called to update the current count.
-        public void UpdateCurrentCount(int paramCount)
+        public void UpdateCurrentState(int paramCount)
         {
+            paramCount++;
             _buttonCount = paramCount;
             StateHasChanged();
         }
         //This will allow us to reset the current count.
-        public void ResetCurrentCount()
+        public void ResetCurrentState()
         {
             _buttonCount = 0;
             StateHasChanged();
