@@ -70,30 +70,35 @@
 
 @if (imagePopup == true)
 {
+<EditForm Model="@modalInput" OnValidSubmit="@ValidSubmit">
+    <DataAnnotationsValidator />
+
     <div class="modal" tabindex="-1" style="display:block" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Select image </h3>
+                    <h3 class="modal-title"> Select image </h3>
                     <!--Button to close the popup-->
                     <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
                 </div>
                 <div class="modal-body">
                     <!--Selection options dropdown list-->
-                    <select class="form-control selectpicker">
-                        <option>--Select--</option>
+                    <InputSelect id="image" type="text" @bind-Value="modalInput.Image">
+                        <option value="">--Select--</option>
                         @foreach (var item in Items)
                         {
-                            <option value="@item.ItemId">@item.Name</option>
+                        <option value="@item.ItemId">@item.Name</option>
                         }
-                    </select>
+                    </InputSelect>
+                    <ValidationMessage For="@(() => modalInput.Image)" />
                 </div>
                 <div class="modal-footer" style="text-align:center">
-                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
+                    <button type="submit" class="oi oi-circle-check" aria-hidden="true"> Select </button>
                 </div>
             </div>
         </div>
     </div>
+</EditForm>
 }
 
 <style>
@@ -141,13 +146,20 @@
         imagePopup = true;
     }
 
-    void EventHandleSelect()
+    void ValidSubmit()
     {
         ClosePopup();
         CloseButton();
     }
 
     public List<Item> Items { get; set; } = new List<Item>();
+
+    private Item modalInput = new Item
+    {
+        Name = "Name of image",
+        Description = "Adjective words about the image",
+        Image = "url where the image could be found"
+    };
 
     //TODO : OnInitialize method
 }

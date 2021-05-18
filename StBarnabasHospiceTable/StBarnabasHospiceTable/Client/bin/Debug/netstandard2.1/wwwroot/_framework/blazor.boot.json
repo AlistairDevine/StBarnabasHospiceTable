@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "StBarnabasHospiceTable.Client.dll": "sha256-gQT8oaUAd+d8QRr3BBqmYdan5VEnpFAYiGZ8gOh7ZWE=",
+      "StBarnabasHospiceTable.Client.dll": "sha256-IuKClGWTh2eJDxeGObgAGgMhMAPwxr6m2HSYlo+1qL0=",
       "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -46,7 +46,7 @@
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-m7Q+cF5\/ji3OMfdGlCuE8pQ\/iM+kxNHLq\/IEWVvIaOg=",
       "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
-      "StBarnabasHospiceTable.Shared.dll": "sha256-FtbDa+sh9EbdynShpnWUTrqr5KrWud2oTlRCkuBIVHs=",
+      "StBarnabasHospiceTable.Shared.dll": "sha256-U2dcZSSZWZYosOcfzJWwSE2wL8oPHUVZz1xXWkGpG28=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-oK1Bjv95fH+hSbogUkJE+xDAI203kJG6lL6Sm\/NuPWg=",
       "Microsoft.Extensions.Primitives.dll": "sha256-y\/FyJQOcW2TOcTp7Iuv8brGBzL5ZP0oJdG7ysK+gtKc=",
@@ -62,8 +62,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "StBarnabasHospiceTable.Client.pdb": "sha256-2fhPMm8cOXPYWYzDgrHpnC58VYfs8AqAFTM6ubXW4RE=",
-      "StBarnabasHospiceTable.Shared.pdb": "sha256-AKRJZyOlpx\/Ep\/Db6xw\/ZqU7WLrB86R6w690SKc+bVs="
+      "StBarnabasHospiceTable.Client.pdb": "sha256-08VxSASDpNS+YWFk7dRlVb5lew8M6ODtl94LqEJbq\/w=",
+      "StBarnabasHospiceTable.Shared.pdb": "sha256-A\/M63c5qRFU0B81ItAa2uXGjzJKUlBcb5712Nzu2dqs="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",
