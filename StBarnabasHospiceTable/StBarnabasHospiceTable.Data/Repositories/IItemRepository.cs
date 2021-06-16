@@ -1,11 +1,12 @@
 ﻿using StBarnabasHospiceTable.Shared;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace StBarnabasHospiceTable.Data.Repositories
 {
     public interface IItemRepository
     {
-        IEnumerable<Item> GetAllItems();
+        Task<IEnumerable<Item>> GetAllItems();
         Item GetItemById(int itemId);
     }
 }

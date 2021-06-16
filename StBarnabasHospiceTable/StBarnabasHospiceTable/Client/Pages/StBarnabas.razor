@@ -4,7 +4,8 @@
 @using StBarnabasHospiceTable.Client.Services
 @using StBarnabasHospiceTable.Client.Pages.SessionState 
 
-@inherits StBarnabasBase
+@inject HttpClient httpClient
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <h3>Object Table</h3>
 <!--State management now call the GetCurrentCount() method to get the current count-->
@@ -28,14 +29,13 @@
     }
 </style>
 
-<ButtonTemplate/>
+<ButtonTemplate Items="Items"/>
 
 @code {
     /// <summary>
     /// Global variables
     /// </summary>
-    [Inject] public IItemDataService itemService { get; set; }
-    public List<Item> Items { get; set; } = new List<Item>();
+    private List<Item> Items;
 
     /// <summary>
     /// Button / Session State  code
@@ -63,6 +63,8 @@
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
-        Items = (await itemService.GetAllItems()).ToList();
+        Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        await localStorage.SetItemAsync<List<Item>>("Objects", Items);
+
     }
 } 

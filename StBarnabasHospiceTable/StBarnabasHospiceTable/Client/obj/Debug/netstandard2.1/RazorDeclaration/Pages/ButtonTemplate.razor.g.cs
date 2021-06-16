@@ -90,6 +90,13 @@ using StBarnabasHospiceTable.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 14 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
 using Blazorme;
 
@@ -111,14 +118,40 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 123 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 156 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
        
     bool displayButton = true;
-    [Parameter] public int buttonCount { get; set; }
-    [Parameter] public int buttonSection { get; set; }
-    int buttonLimit = 3;
+    bool[] displayButtons;
+    int runningCount = 0;
 
     bool imagePopup = false;
+
+    //Counter state management
+    //TODO : convert into switch statement
+    void displayButtonOne()
+    {
+        runningCount = 1;
+    }
+    void displayButtonTwo()
+    {
+        runningCount = 2;
+    }
+    void displayButtonThree()
+    {
+        runningCount = 3;
+    }
+    void displayButtonFour()
+    {
+        runningCount = 4;
+    }
+    void displayButtonFive()
+    {
+        runningCount = 5;
+    }
+    void displayButtonSix()
+    {
+        runningCount = 6;
+    }
 
     void CloseButton()
     {
@@ -132,6 +165,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     void ClosePopup()
     {
         imagePopup = false;
+        runningCount = 0;
     }
     void ShowPopup()
     {
@@ -144,16 +178,16 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         CloseButton();
     }
 
-    public List<Item> Items { get; set; } = new List<Item>();
+    [Parameter] public List<Item> Items { get; set; } = new List<Item>();
+    //TODO : place string into list<string>, not just six different strings
+    public string PaneOne = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2018%2F05%2F12170411%2Fcat-kitten-138468381.jpg&q=85";
+    public string PaneTwo = "Images/yesEdit.png";
+    public string PaneThree = "Images/yesEdit.png";
+    public string PaneFour = "Images/yesEdit.png";
+    public string PaneFive = "Images/yesEdit.png";
+    public string PaneSix = "Images/yesEdit.png";
 
-    private Item modalInput = new Item
-    {
-        Name = "Name of image",
-        Description = "Adjective words about the image",
-        Image = "url where the image could be found"
-    };
 
-    //TODO : OnInitialize method
 
 #line default
 #line hidden

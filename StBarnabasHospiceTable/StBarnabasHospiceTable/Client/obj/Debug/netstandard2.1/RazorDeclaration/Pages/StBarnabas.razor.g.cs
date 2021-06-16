@@ -76,6 +76,13 @@ using StBarnabasHospiceTable.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 14 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
 using Blazorme;
 
@@ -104,7 +111,7 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/barnabas")]
-    public partial class StBarnabas : StBarnabasBase
+    public partial class StBarnabas : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,13 +119,12 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
+#line 34 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\StBarnabas.razor"
        
     /// <summary>
     /// Global variables
     /// </summary>
-    [Inject] public IItemDataService itemService { get; set; }
-    public List<Item> Items { get; set; } = new List<Item>();
+    private List<Item> Items;
 
     /// <summary>
     /// Button / Session State  code
@@ -146,12 +152,16 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
-        Items = (await itemService.GetAllItems()).ToList();
+        Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        await localStorage.SetItemAsync<List<Item>>("Objects", Items);
+
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.LocalStorage.ILocalStorageService localStorage { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient httpClient { get; set; }
     }
 }
 #pragma warning restore 1591

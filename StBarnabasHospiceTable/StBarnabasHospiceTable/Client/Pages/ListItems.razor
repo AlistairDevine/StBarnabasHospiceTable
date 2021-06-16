@@ -1,79 +1,72 @@
 ﻿<!--Page route path-->
 @page "/listitem"
-<!--Page C# code link-->
-@inherits ListItemsBase
 
-@using StBarnabasHospiceTable.Shared
-@using StBarnabasHospiceTable.Client.Services
 <!--Link to the item service data class, back-end code-->
 @inject IItemDataService itemService
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
 <!--List of all items in catergories-->
 <div id="items" class="widget">
     <!--Title and Button to add new item to the list.-->
-    <h3 style="margin-bottom: 10px;">Items<button type="submit" @onclick="AddItem" class="btn btn-primary edit-btn float-right">Add PNG Item</button></h3>
-    <!--Table of listed items-->
-    <table class="table table-bordered" style="width:90%;">
-        <!--Table header section-->
-        <thead>
-            <tr>
-                <th scope="col">Item Name</th>
-                <th scope="col">Description</th>
-                <!--Img size: 300w, 250h-->
-                <th scope="col">Image</th>
-            </tr>
-        </thead>
-        <!--Table body section-->
-        <tbody>
-            @foreach (var item in Items)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td><img src="@item.Image" /></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <div>
-        @Message
-    </div>
-</div>
-@if (ShowPopup == true)
-{
-    <!--This is the popup to add a new item into the list-->
-    <div class="modal" tabindex="-1" style="display:block" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Add item</h3>
-                    <!--Button to close the popup-->
-                    <button type="button" class="close" @onclick="ClosePopup">
-                        <span aria-hidden="true">X</span>
-                    </button>
-                </div>
-                <!--Save button-->
-                <div class="modal-body">
-                    <EditForm Model="@HRItem" OnValidSubmit="@HandleValidSubmit">
-                        <DataAnnotationsValidator />
-                        <ValidationSummary />
-                        <div class="form-group row">
-                            <label for="name" class="col-sm-3">Name: </label>
-                            <InputText id="name" class="form-control col-sm-8" @bind-Value="@HRItem.Name" placeholder="Enter Item Name"></InputText>
-                        </div>
-                        <div class="form-group row">
-                            <label for="name" class="col-sm-3">Description: </label>
-                            <InputTextArea id="description" class="form-control col-sm-8" @bind-Value="@HRItem.Description" placeholder="Enter Item Description"></InputTextArea>
-                        </div>
-                        <div class="form-group row">
-                            <label for="name" class="col-sm-3">Image Link: </label>
-                            <InputText id="image" class="form-control col-sm-8" @bind-Value="@HRItem.Image" placeholder="Enter Item Image Link"></InputText>
-                        </div>
-                        <button type="submit" class="btn btn-primary edit-btn">Add Item</button>
-                    </EditForm>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+    <h3 style="margin-bottom: 10px;">Items<button type="submit" @onclick="@ToggleAddItem" class="btn btn-primary edit-btn float-right">Add PNG Item</button></h3>
+    <p>@Message</p>
 
+    @if (items == null)
+    {
+        <div class="loading">
+            <img alt="Loading indicator" class="oi oi-loop-circular" /> Loading
+        </div>
+    }
+    else
+    {
+        <div class="m-4 my-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach (var item in items)
+            {
+                <ImageListItem Image="@item" />
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    private List<Item> items = new List<Item>();
+    //Add item values
+    public bool ShowPopup = false;
+    public string Message { get; set; }
+    public Item CreateItem { get; set; }
+
+    void ToggleAddItem()
+    {
+        navigationManager.NavigateTo("/item/create");
+    }
+
+    public void ClosePopup()
+    {
+        //Close the Popup
+        ShowPopup = false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ShowPopup = false;
+        items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+    }
+
+    public async Task HandleValidSubmit()
+    {
+        //Api call for creation of item
+        //Save the item to the item list
+        await httpClient.PostAsJsonAsync<Item>("api/Item", CreateItem);
+
+        if (CreateItem != null)
+        {
+            navigationManager.NavigateTo("/listitem");
+        }
+        else
+        {
+            Console.WriteLine(CreateItem);
+        }
+    }
+}
 

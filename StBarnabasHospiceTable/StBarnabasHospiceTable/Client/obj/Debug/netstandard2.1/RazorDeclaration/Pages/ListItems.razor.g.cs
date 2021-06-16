@@ -83,6 +83,20 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using StBarnabasHospiceTable.Client.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using StBarnabasHospiceTable.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 13 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
 using Blazorme;
 
@@ -90,27 +104,68 @@ using Blazorme;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
-using StBarnabasHospiceTable.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 7 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
-using StBarnabasHospiceTable.Client.Services;
+#line 14 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/listitem")]
-    public partial class ListItems : ListItemsBase
+    public partial class ListItems : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 31 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
+       
+
+    private List<Item> items = new List<Item>();
+    //Add item values
+    public bool ShowPopup = false;
+    public string Message { get; set; }
+    public Item CreateItem { get; set; }
+
+    void ToggleAddItem()
+    {
+        navigationManager.NavigateTo("/item/create");
+    }
+
+    public void ClosePopup()
+    {
+        //Close the Popup
+        ShowPopup = false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ShowPopup = false;
+        items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+    }
+
+    public async Task HandleValidSubmit()
+    {
+        //Api call for creation of item
+        //Save the item to the item list
+        await httpClient.PostAsJsonAsync<Item>("api/Item", CreateItem);
+
+        if (CreateItem != null)
+        {
+            navigationManager.NavigateTo("/listitem");
+        }
+        else
+        {
+            Console.WriteLine(CreateItem);
+        }
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient httpClient { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IItemDataService itemService { get; set; }
     }
 }

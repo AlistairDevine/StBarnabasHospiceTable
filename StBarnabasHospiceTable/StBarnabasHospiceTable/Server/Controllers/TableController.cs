@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using StBarnabasHospiceTable.Data.Repositories;
+using StBarnabasHospiceTable.Server.Data.Repositories;
 
 namespace StBarnabasHospiceTable.Server.Controllers
 {

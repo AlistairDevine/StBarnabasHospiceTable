@@ -1,9 +1,11 @@
-﻿using StBarnabasHospiceTable.Server.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using StBarnabasHospiceTable.Server.Models;
 using StBarnabasHospiceTable.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StBarnabasHospiceTable.Data.Repositories
 {
@@ -19,14 +21,14 @@ namespace StBarnabasHospiceTable.Data.Repositories
         }
         //Database communication interactions
         //GET Items
-        public IEnumerable<Item> GetAllItems()
+        public async Task<IEnumerable<Item>> GetAllItems()
         {
-            return _appDbContext.Items;
+            return await _appDbContext.Items.OrderByDescending(image => image.Id).ToListAsync();
         }
         //GET Item by Id
         public Item GetItemById(int itemId)
         {
-            return _appDbContext.Items.FirstOrDefault(c => c.ItemId == itemId);
+            return _appDbContext.Items.FirstOrDefault(c => c.Id == itemId);
         }
     }
 }

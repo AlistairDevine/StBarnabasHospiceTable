@@ -1,7 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using StBarnabasHospiceTable.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using StBarnabasHospiceTable.Server.Data;
+using StBarnabasHospiceTable.Server.Data.Repositories;
+
 using StBarnabasHospiceTable.Shared;
 
 namespace StBarnabasHospiceTable.Server.Controllers
@@ -12,21 +18,25 @@ namespace StBarnabasHospiceTable.Server.Controllers
     {
         //Connection to the Data repository
         private readonly IItemRepository _itemRepository;
+
+        private readonly AppDbContext _context;
+        private readonly ILogger<ItemController> _logger;
         //
         private static readonly List<Item> items = new List<Item>();
 
-        public ItemController(IItemRepository itemRepository)
+        public ItemController(ILogger<ItemController> logger, AppDbContext context)
         {
-            _itemRepository = itemRepository;
+            _logger = logger;
+            _context = context;
         }
         //Logger???
 
         //Http Connection actions
         //GET request for all items method, api/<controller>
         [HttpGet]
-        public IActionResult GetItems()
+        public async Task<IEnumerable<Item>> GetItems()
         {
-            return Ok(_itemRepository.GetAllItems());
+            return await _context.Items.OrderByDescending(image => image.Id).ToListAsync();
         }
         //GET request for items by Id method, api/<controller>/3
         [HttpGet("{id}")]
@@ -34,11 +44,14 @@ namespace StBarnabasHospiceTable.Server.Controllers
         {
             return Ok(_itemRepository.GetItemById(id));
         }
-        //POST: api/items
+        //POST: api/item
         [HttpPost]
-        public void AddItemController([FromBody] Item item)
+        public async Task<IActionResult> AddItemController(Item item)
         {
-            items.Add(item);
+            _context.Add(item);
+            await _context.SaveChangesAsync();
+
+            return Ok(item);
         }
     }
 }

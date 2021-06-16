@@ -103,6 +103,13 @@ using Blazorme;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

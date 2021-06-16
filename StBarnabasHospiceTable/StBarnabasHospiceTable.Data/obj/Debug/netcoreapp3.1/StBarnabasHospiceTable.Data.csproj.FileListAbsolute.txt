@@ -15,10 +15,11 @@ C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\St
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.pdb
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Shared.dll
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\bin\Debug\netcoreapp3.1\StBarnabasHospiceTable.Shared.pdb
-C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csprojAssemblyReference.cache
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.AssemblyInfoInputs.cache
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.AssemblyInfo.cs
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csproj.CoreCompileInputs.cache
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csproj.CopyComplete
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.dll
 C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.pdb
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.csproj.AssemblyReference.cache
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable.Data\obj\Debug\netcoreapp3.1\StBarnabasHospiceTable.Data.GeneratedMSBuildEditorConfig.editorconfig

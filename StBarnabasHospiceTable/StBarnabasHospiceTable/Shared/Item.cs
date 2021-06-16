@@ -8,17 +8,17 @@ namespace StBarnabasHospiceTable.Shared
     {
         //Every property / value that an Item object holds.
         [Required]
-        [StringLength(15, ErrorMessage = "Name too long.")]
+        [StringLength(50, ErrorMessage = "Name too long.")]
         //Item Name property
         public string Name { get; set; }
         //Item Identification propery
-        public int ItemId { get; set; }
-        [StringLength(50, ErrorMessage = "Description too long.")]
+        public int Id { get; set; }
+        [StringLength(200, ErrorMessage = "Description too long.")]
         //Item Description property
         public string Description { get; set; }
         //Item Image property
         //Only accept image tags e.g. png, jpeg
-        
+
         public string Image { get; set; }
     }
 }
