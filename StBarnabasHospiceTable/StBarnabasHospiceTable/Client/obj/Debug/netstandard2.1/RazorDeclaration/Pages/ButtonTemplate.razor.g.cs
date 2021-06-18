@@ -111,12 +111,13 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
+#line 133 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
        
     bool displayButton = true;
-    [Parameter] public int buttonCount { get; set; }
-    [Parameter] public int buttonSection { get; set; }
-    int buttonLimit = 3;
+    List<int> ButtonIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
+
+    Dictionary<string, object> ButtonIdAttribute;
+    [Parameter] public int idButton { get; set; }
 
     bool imagePopup = false;
 
@@ -138,13 +139,75 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
         imagePopup = true;
     }
 
-    void EventHandleSelect()
+    void ValidSubmit()
     {
         ClosePopup();
         CloseButton();
     }
 
     public List<Item> Items { get; set; } = new List<Item>();
+
+    private Item modalInput = new Item
+    {
+        Name = "Name of image",
+        Description = "Adjective words about the image",
+        Image = "url where the image could be found"
+    };
+
+    //TODO : OnInitialize method
+    protected override void OnInitialized()
+    {
+
+    }
+
+    //TODO : Place conditional statements within a different method to be place inside the oninitialized method
+    public void SplitPaneIdentity()
+    {
+        ButtonIdAttribute = new Dictionary<string, object>();
+
+        //Switch statement???
+        if (ButtonIds[0] == 1)
+        {
+            idButton = 1;
+        }
+        if (ButtonIds[1] == 2)
+        {
+            idButton = 2;
+        }
+        if (ButtonIds[2] == 3)
+        {
+            for (int i = 3; i < 4; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[3] == 4)
+        {
+            for (int i = 4; i < 5; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[4] == 5)
+        {
+            for (int i = 5; i < 6; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[5] == 6)
+        {
+            for (int i = 6; i < 7; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        //Dynamic for loop start i number and i length end number???
+    }
 
 #line default
 #line hidden

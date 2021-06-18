@@ -18,7 +18,7 @@ namespace StBarnabasHospiceTable.Shared
         public string Description { get; set; }
         //Item Image property
         //Only accept image tags e.g. png, jpeg
-        
+        [StringLength(50, ErrorMessage = "Image url is too long or short.")]
         public string Image { get; set; }
     }
 }

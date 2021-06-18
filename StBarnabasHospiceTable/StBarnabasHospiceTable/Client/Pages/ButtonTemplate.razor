@@ -10,16 +10,44 @@
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        <div class="container-pane" id="@ButtonIds[0]">
+                            <a class="oi oi-plus btn" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                    else if (displayButton == false)
+                    {
+                        <image placeholder="" src=""></image>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane" id="@ButtonIds[1]">
+                            <a class="oi oi-plus btn" id="buttonTwo" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        </div>
+                    }
+                    else if (displayButton == false)
+                    {
+                        <image placeholder="" src=""></image>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+                <SplitPane MinSize="0">
+                    @if (displayButton == true)
+                    {
+                        <div class="container-pane" id="@ButtonIds[2]">
+                            <a class="oi oi-plus btn button3" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
                         </div>
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        <div class="container-pane" id="@ButtonIds[3]">
+                            <a class="oi oi-plus btn button4" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
                         </div>
                     }
                 </SplitPane>
@@ -30,36 +58,16 @@
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        <div class="container-pane" id="@ButtonIds[4]">
+                            <a class="oi oi-plus btn button5" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
                         </div>
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
                     @if (displayButton == true)
                     {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
-                        </div>
-                    }
-                </SplitPane>
-            </Split>
-        </SplitPane>
-        <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
-                <SplitPane MinSize="0">
-                    @if (displayButton == true)
-                    {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
-                        </div>
-                    }
-                </SplitPane>
-                <SplitPane MinSize="0">
-                    @if (displayButton == true)
-                    {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button1" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
+                        <div class="container-pane" id="@ButtonIds[5]">
+                            <a class="oi oi-plus btn button6" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="ShowPopup"></a>
                         </div>
                     }
                 </SplitPane>
@@ -70,30 +78,36 @@
 
 @if (imagePopup == true)
 {
+<EditForm Model="@modalInput" OnValidSubmit="@ValidSubmit">
+    <DataAnnotationsValidator />
+
     <div class="modal" tabindex="-1" style="display:block" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Select image </h3>
+                    <h3 class="modal-title"> Select image @idButton.ToString()</h3>
                     <!--Button to close the popup-->
                     <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
                 </div>
                 <div class="modal-body">
                     <!--Selection options dropdown list-->
-                    <select class="form-control selectpicker">
+                    <InputSelect id="image" type="text" @bind-Value="modalInput.Image">
                         <option>--Select--</option>
                         @foreach (var item in Items)
                         {
-                            <option value="@item.ItemId">@item.Name</option>
+                        <option value="@item.ItemId">@item.Name</option>
                         }
-                    </select>
+                    </InputSelect>
+                    <ValidationMessage For="@(() => modalInput.Image)" />
                 </div>
                 <div class="modal-footer" style="text-align:center">
-                    <a type="button" class="oi oi-circle-check" aria-hidden="true" @onclick="EventHandleSelect"> Select </a>
+                    <button type="submit" class="oi oi-circle-check" aria-hidden="true"> Select </button>
                 </div>
             </div>
         </div>
     </div>
+
+</EditForm>
 }
 
 <style>
@@ -117,9 +131,10 @@
 
 @code {
     bool displayButton = true;
-    [Parameter] public int buttonCount { get; set; }
-    [Parameter] public int buttonSection { get; set; }
-    int buttonLimit = 3;
+    List<int> ButtonIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
+
+    Dictionary<string, object> ButtonIdAttribute;
+    [Parameter] public int idButton { get; set; }
 
     bool imagePopup = false;
 
@@ -141,7 +156,7 @@
         imagePopup = true;
     }
 
-    void EventHandleSelect()
+    void ValidSubmit()
     {
         ClosePopup();
         CloseButton();
@@ -149,5 +164,65 @@
 
     public List<Item> Items { get; set; } = new List<Item>();
 
+    private Item modalInput = new Item
+    {
+        Name = "Name of image",
+        Description = "Adjective words about the image",
+        Image = "url where the image could be found"
+    };
+
     //TODO : OnInitialize method
+    protected override void OnInitialized()
+    {
+
+    }
+
+    //TODO : Place conditional statements within a different method to be place inside the oninitialized method
+    public void SplitPaneIdentity()
+    {
+        ButtonIdAttribute = new Dictionary<string, object>();
+
+        //Switch statement???
+        if (ButtonIds[0] == 1)
+        {
+            idButton = 1;
+        }
+        if (ButtonIds[1] == 2)
+        {
+            idButton = 2;
+        }
+        if (ButtonIds[2] == 3)
+        {
+            for (int i = 3; i < 4; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[3] == 4)
+        {
+            for (int i = 4; i < 5; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[4] == 5)
+        {
+            for (int i = 5; i < 6; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        if (ButtonIds[5] == 6)
+        {
+            for (int i = 6; i < 7; i++)
+            {
+                ButtonIdAttribute["id_" + i] = i;
+            }
+            ButtonIds[0] = idButton;
+        }
+        //Dynamic for loop start i number and i length end number???
+    }
 }
