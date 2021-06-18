@@ -1739,7 +1739,6 @@
         "dependencies": {
           "Blazorme.Split": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "3.2.1",
-          "StBarnabasHospiceTable.Shared": "1.0.0",
           "System.Net.Http.Json": "3.2.0"
         },
         "compile": {
@@ -1753,27 +1752,13 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.7",
-          "StBarnabasHospiceTable.Shared": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "3.1.7"
         },
         "compile": {
           "bin/placeholder/StBarnabasHospiceTable.Data.dll": {}
         },
         "runtime": {
           "bin/placeholder/StBarnabasHospiceTable.Data.dll": {}
-        }
-      },
-      "StBarnabasHospiceTable.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "System.ComponentModel.Annotations": "4.7.0"
-        },
-        "compile": {
-          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
         }
       }
     }
@@ -6428,11 +6413,6 @@
       "type": "project",
       "path": "../../StBarnabasHospiceTable.Data/StBarnabasHospiceTable.Data.csproj",
       "msbuildProject": "../../StBarnabasHospiceTable.Data/StBarnabasHospiceTable.Data.csproj"
-    },
-    "StBarnabasHospiceTable.Shared/1.0.0": {
-      "type": "project",
-      "path": "../Shared/StBarnabasHospiceTable.Shared.csproj",
-      "msbuildProject": "../Shared/StBarnabasHospiceTable.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6442,25 +6422,32 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.7",
       "StBarnabasHospiceTable.Client >= 1.0.0",
-      "StBarnabasHospiceTable.Data >= 1.0.0",
-      "StBarnabasHospiceTable.Shared >= 1.0.0"
+      "StBarnabasHospiceTable.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alist\\.nuget\\packages\\": {}
+    "C:\\Users\\Dvine\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\StBarnabasHospiceTable.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\StBarnabasHospiceTable.Server.csproj",
       "projectName": "StBarnabasHospiceTable.Server",
-      "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\StBarnabasHospiceTable.Server.csproj",
-      "packagesPath": "C:\\Users\\alist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\obj\\",
+      "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\StBarnabasHospiceTable.Server.csproj",
+      "packagesPath": "C:\\Users\\Dvine\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Server\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\alist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Dvine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6473,14 +6460,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj": {
-              "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj"
+            "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj": {
+              "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj"
             },
-            "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\StBarnabasHospiceTable.Client.csproj": {
-              "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\StBarnabasHospiceTable.Client.csproj"
-            },
-            "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj": {
-              "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj"
+            "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\StBarnabasHospiceTable.Client.csproj": {
+              "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Client\\StBarnabasHospiceTable.Client.csproj"
             }
           }
         }
@@ -6524,6 +6508,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.5, 5.0.5]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6532,7 +6522,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.4.21255.9\\RuntimeIdentifierGraph.json"
       }
     }
   }

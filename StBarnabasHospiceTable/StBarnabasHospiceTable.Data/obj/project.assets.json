@@ -215,19 +215,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
-      },
-      "StBarnabasHospiceTable.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "System.ComponentModel.Annotations": "4.7.0"
-        },
-        "compile": {
-          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
-        }
       }
     }
   },
@@ -642,34 +629,36 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "StBarnabasHospiceTable.Shared/1.0.0": {
-      "type": "project",
-      "path": "../StBarnabasHospiceTable/Shared/StBarnabasHospiceTable.Shared.csproj",
-      "msbuildProject": "../StBarnabasHospiceTable/Shared/StBarnabasHospiceTable.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.EntityFrameworkCore >= 3.1.7",
-      "StBarnabasHospiceTable.Shared >= 1.0.0"
+      "Microsoft.EntityFrameworkCore >= 3.1.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alist\\.nuget\\packages\\": {}
+    "C:\\Users\\Dvine\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj",
       "projectName": "StBarnabasHospiceTable.Data",
-      "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj",
-      "packagesPath": "C:\\Users\\alist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\obj\\",
+      "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\StBarnabasHospiceTable.Data.csproj",
+      "packagesPath": "C:\\Users\\Dvine\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\alist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Dvine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -681,11 +670,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj": {
-              "projectPath": "C:\\Users\\alist\\OneDrive\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -718,7 +703,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.4.21255.9\\RuntimeIdentifierGraph.json"
       }
     }
   }
