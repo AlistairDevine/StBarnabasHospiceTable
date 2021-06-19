@@ -1,0 +1,12 @@
+﻿<a href="/edit/@Image.Id" class="h-28 block bg-white rounded-md shadow-md flex">
+    <!--TODO : picture not working, change to raw data images and adjust image path input-->
+    <div class="img flex-shrink-0 bg-gray-100 w-32 bg-cover bg-center rounded-md" style="@($"background-image: url('{Image.Image}'); display: block; background-position: right; background-repeat: no-repeat; background-size: contain; height: 113px;")"></div>
+    <div class="px-5 py-3 flex flex-col min-w-0">
+        <h3 class="text-lg">@Image.Name</h3>
+        <p class="font-light lineclamp-1">@Image.Description</p>
+    </div>
+</a>
+
+@code {
+    [Parameter] public Item Image { get; set; }
+}

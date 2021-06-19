@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StBarnabasHospice.Server.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace StBarnabasHospice.Server
@@ -22,6 +24,15 @@ namespace StBarnabasHospice.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //ASP.NET Identity, build-in indivdual user login system microsoft.
+            //services.AddDefaultIdentity()
+            //Adds a single page application with an authorization server.
+            //services.AddIdentityServer()
+            //Creates a new API that coexists with an authorization server.
+            //services.AddAuthentication().AddIdentityServerJwt();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -47,6 +58,10 @@ namespace StBarnabasHospice.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+            //RESEARCH
+            //app.UseIdentityServer();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

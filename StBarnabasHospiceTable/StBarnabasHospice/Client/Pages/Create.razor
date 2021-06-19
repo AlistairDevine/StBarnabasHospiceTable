@@ -1,0 +1,17 @@
+﻿@page "/item/create"
+
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3 class="modal-title">Create item</h3>
+
+<FormCreation ButtonText="Create Item" HandleValidSubmit="@CreateItem" HRItem="@CreatedItem" />
+
+@code {
+    Item CreatedItem = new Item();
+    async Task CreateItem()
+    {
+        await httpClient.PostAsJsonAsync("api/Item", CreatedItem);
+        navigationManager.NavigateTo("listitem");
+    }
+}

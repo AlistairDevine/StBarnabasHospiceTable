@@ -3,19 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Server", "StBarnabasHospiceTable\Server\StBarnabasHospiceTable.Server.csproj", "{C6A11E2A-66D9-4F9F-9748-B2F45A2E8515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospice.Server", "StBarnabasHospice\Server\StBarnabasHospice.Server.csproj", "{458345F2-AF7E-4A4F-A611-6B66ACFA3DDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Client", "StBarnabasHospiceTable\Client\StBarnabasHospiceTable.Client.csproj", "{D1E6B722-52FE-420D-ACF8-1086D4F26002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospice.Client", "StBarnabasHospice\Client\StBarnabasHospice.Client.csproj", "{69F8CAEC-8723-4579-8ABD-6C429DF86F99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Shared", "StBarnabasHospiceTable\Shared\StBarnabasHospiceTable.Shared.csproj", "{9BDB28DF-6ED8-482E-A5E3-A641BDF3F665}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospiceTable.Data", "StBarnabasHospiceTable.Data\StBarnabasHospiceTable.Data.csproj", "{84793C31-8426-4447-82A6-5A5B85B0C92A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StBarnabasHospice.Server", "StBarnabasHospice\Server\StBarnabasHospice.Server.csproj", "{458345F2-AF7E-4A4F-A611-6B66ACFA3DDE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StBarnabasHospice.Client", "StBarnabasHospice\Client\StBarnabasHospice.Client.csproj", "{69F8CAEC-8723-4579-8ABD-6C429DF86F99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StBarnabasHospice.Shared", "StBarnabasHospice\Shared\StBarnabasHospice.Shared.csproj", "{71ABC23B-F327-4895-992F-266341B9EA3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StBarnabasHospice.Shared", "StBarnabasHospice\Shared\StBarnabasHospice.Shared.csproj", "{71ABC23B-F327-4895-992F-266341B9EA3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6A11E2A-66D9-4F9F-9748-B2F45A2E8515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6A11E2A-66D9-4F9F-9748-B2F45A2E8515}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6A11E2A-66D9-4F9F-9748-B2F45A2E8515}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6A11E2A-66D9-4F9F-9748-B2F45A2E8515}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1E6B722-52FE-420D-ACF8-1086D4F26002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1E6B722-52FE-420D-ACF8-1086D4F26002}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1E6B722-52FE-420D-ACF8-1086D4F26002}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1E6B722-52FE-420D-ACF8-1086D4F26002}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BDB28DF-6ED8-482E-A5E3-A641BDF3F665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BDB28DF-6ED8-482E-A5E3-A641BDF3F665}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BDB28DF-6ED8-482E-A5E3-A641BDF3F665}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BDB28DF-6ED8-482E-A5E3-A641BDF3F665}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84793C31-8426-4447-82A6-5A5B85B0C92A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{458345F2-AF7E-4A4F-A611-6B66ACFA3DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{458345F2-AF7E-4A4F-A611-6B66ACFA3DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458345F2-AF7E-4A4F-A611-6B66ACFA3DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
