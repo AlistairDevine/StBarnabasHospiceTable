@@ -14,7 +14,7 @@
                     }
                     else if (displayButtons[0] == false)
                     {
-                        <img class="PaneImage ImageOne" placeholder="display panel one" alt="Panel one image" src="/@PaneOne" />
+                        <img class="PaneImage ImageOne" placeholder="display panel one" alt="Panel one image" src="@PaneOne" />
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
@@ -26,7 +26,7 @@
                     }
                     else
                     {
-                        <img class="PaneImage ImageTwo" placeholder="display panel two" alt="Panel one image" src="/@PaneTwo" />
+                        <img class="PaneImage ImageTwo" placeholder="display panel two" alt="Panel one image" src="@PaneTwo" />
                     }
                 </SplitPane>
             </Split>
@@ -42,7 +42,7 @@
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="/@PaneThree" />
+                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneThree" />
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
@@ -54,7 +54,7 @@
                     }
                     else
                     {
-                        <img class="PaneImage ImageTwo" placeholder="display panel one" alt="Panel one image" src="/@PaneFour" />
+                        <img class="PaneImage ImageTwo" placeholder="display panel one" alt="Panel one image" src="@PaneFour" />
                     }
                 </SplitPane>
             </Split>
@@ -70,7 +70,7 @@
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="/@PaneFive" />
+                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneFive" />
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
@@ -82,7 +82,7 @@
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="/@PaneSix" />
+                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneSix" />
                     }
                 </SplitPane>
             </Split>
@@ -112,7 +112,7 @@
                             <InputSelect id="image" type="text" @bind-Value="ModelImage">
                                 @foreach (var item in Items)
                                         {
-                                    <option value="@item.Id">@item.Name</option>
+                                            <option value="@item.Image">@item.Name</option>
                                         }
                             </InputSelect>
                             <ValidationMessage For="@(() => Items[0].Image)" />
@@ -197,26 +197,32 @@
         {
             case 1:
                 displayButtons[0] = false;
+                PaneOne = ModelImage;
                 Console.WriteLine("Button one works");
                 break;
             case 2:
                 displayButtons[1] = false;
+                PaneTwo = ModelImage;
                 Console.WriteLine("Button two works");
                 break;
             case 3:
                 displayButtons[2] = false;
+                PaneThree = ModelImage;
                 Console.WriteLine("Button three works");
                 break;
             case 4:
                 displayButtons[3] = false;
+                PaneFour = ModelImage;
                 Console.WriteLine("Button four works");
                 break;
             case 5:
                 displayButtons[4] = false;
+                PaneFive = ModelImage;
                 Console.WriteLine("Button five works");
                 break;
             case 6:
                 displayButtons[5] = false;
+                PaneSix = ModelImage;
                 Console.WriteLine("Button six works");
                 break;
         }
@@ -245,22 +251,15 @@
     {
         CloseButton();
         ClosePopup();
-        SelectPane();
     }
 
     [Parameter] public List<Item> Items { get; set; } = new List<Item>();
     string ModelImage = "";
     //TODO : place string into list<string>, not just six different strings
-    public string PaneOne = "Images/noEdit.png";
-    public string PaneTwo = "Images/yesEdit.png";
-    public string PaneThree = "Images/noEdit.png";
-    public string PaneFour = "Images/yesEdit.png";
-    public string PaneFive = "Images/noEdit.png";
-    public string PaneSix = "Images/yesEdit.png";
-
-    //TODO : Create selection pane method, public string SelectPane(List<string> PaneSoruce) if statements
-    void SelectPane()
-    {
-
-    }
+    public string PaneOne = "";
+    public string PaneTwo = "";
+    public string PaneThree = "";
+    public string PaneFour = "";
+    public string PaneFive = "";
+    public string PaneSix = "";
 }
