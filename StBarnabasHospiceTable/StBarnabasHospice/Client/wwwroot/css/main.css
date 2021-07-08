@@ -1,0 +1,28 @@
+﻿.button_container {
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 70px 0;
+}
+a.button {
+    border: 0.1em solid #000000;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+    a.button:hover {
+        color: #FFFFFF;
+        background-color: #000000;
+    }
+
+.container-pane {
+    padding: 70px 0;
+    vertical-align: middle
+}
+.PaneImage {
+    /*image size values to dynamically change to fit pane sizing adjustments, place values into variables*/
+    width: 300px;
+    height: 250px;
+}

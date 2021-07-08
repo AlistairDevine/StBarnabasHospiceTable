@@ -7,3 +7,13 @@ C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospic
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.dll
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.pdb
 C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\bin\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.deps.json
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\bin\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.dll
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\bin\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.pdb
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.csproj.AssemblyReference.cache
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.AssemblyInfoInputs.cache
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.AssemblyInfo.cs
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.dll
+C:\Users\Dvine\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Shared\obj\Debug\netstandard2.1\StBarnabasHospiceTable.Shared.pdb

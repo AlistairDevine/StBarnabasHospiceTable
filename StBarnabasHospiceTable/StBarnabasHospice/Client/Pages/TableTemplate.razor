@@ -1,32 +1,38 @@
-﻿<!--onclick removed for testing purposes-->
-<!--Template component tutorial review needed to ensure no missed takes have been made.-->
+﻿<!--TODO : initialisation of table state error-->
+<!--State Management-->
 
-<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height:600px">
+<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height: 80%">
     <Split>
         <SplitPane SizeInPercentage="33" MinSize="0">
             <Split Direction="@SplitDirection.Vertical" GutterSize="5">
                 <SplitPane MinSize="0">
                     @if (displayButtons?[0] == true)
                     {
-                        <div class="container-pane">
-                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonOne"></a>
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius: 35%; padding: 50px" @onclick="displayButtonOne"></a>
                         </div>
                     }
                     else if (displayButtons[0] == false)
                     {
-                        <img class="PaneImage ImageOne" style="" placeholder="display panel one" alt="Panel one image" src="@PaneOne" />
+                        //TODO : Dynamic naming of alt string
+                        //TODO: (Javascript) adjust image size to pane size changes
+                        <div class="button_container">
+                            <img class="PaneImage ImageOne" style="" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
+                        </div>
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
                     @if (displayButtons?[1] == true)
                     {
-                        <div class="container-pane">
+                        <div class="container-pane button_container">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonTwo"></a>
                         </div>
                     }
                     else
                     {
-                        <img class="PaneImage ImageTwo" placeholder="display panel two" alt="Panel one image" src="@PaneTwo" />
+                        <div class="button_container">
+                            <img class="PaneImage ImageTwo" placeholder="display panel two" alt="Panel two image" src="@_tableState.GetCurrentImage(2)" @onclick="displayButtonTwo" />
+                        </div>
                     }
                 </SplitPane>
             </Split>
@@ -36,25 +42,29 @@
                 <SplitPane MinSize="0">
                     @if (displayButtons[2] == true)
                     {
-                        <div class="container-pane">
+                        <div class="container-pane button_container">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonThree"></a>
                         </div>
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneThree" />
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel three image" src="@_tableState.GetCurrentImage(3)" @onclick="displayButtonThree" />
+                        </div>
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
                     @if (displayButtons[3] == true)
                     {
-                        <div class="container-pane">
+                        <div class="container-pane button_container">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonFour"></a>
                         </div>
                     }
                     else
                     {
-                        <img class="PaneImage ImageTwo" placeholder="display panel one" alt="Panel one image" src="@PaneFour" />
+                        <div class="button_container">
+                            <img class="PaneImage ImageTwo" placeholder="display panel one" alt="Panel four image" src="@_tableState.GetCurrentImage(4)" @onclick="displayButtonFour" />
+                        </div>
                     }
                 </SplitPane>
             </Split>
@@ -64,25 +74,29 @@
                 <SplitPane MinSize="0">
                     @if (displayButtons[4] == true)
                     {
-                        <div class="container-pane">
+                        <div class="container-pane button_container">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonFive"></a>
                         </div>
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneFive" />
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel five image" src="@_tableState.GetCurrentImage(5)" @onclick="displayButtonFive" />
+                        </div>
                     }
                 </SplitPane>
                 <SplitPane MinSize="0">
                     @if (displayButtons[5] == true)
                     {
-                        <div class="container-pane">
+                        <div class="container-pane button_container">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonSix"></a>
                         </div>
                     }
                     else
                     {
-                        <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel one image" src="@PaneSix" />
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel six image" src="@PaneImages[5]" @onclick="displayButtonSix" />
+                        </div>
                     }
                 </SplitPane>
             </Split>
@@ -90,15 +104,33 @@
     </Split>
 </div>
 
+<button @onclick="ShowState">Display state</button>
+@if (loadState)
+{
+    for (int i = 1; i < 6; i++)
+    {
+        <p>@_tableState.GetCurrentImage(i);</p>
+    }
+}
+
+
 @if (imagePopup == true)
 {
     <!--TODO : time delay on loading data from database causing error of null reference in Items model-->
-    @if (Items != null)
+    @if (Items is null)
+    {
+        <EditForm>
+            <div class="model" tabindex="-1" style="height: 50px;" role="dialog">
+                <p>...loading</p>
+            </div>
+        </EditForm>
+    }
+    else
     {
         <EditForm Model="@Items" OnValidSubmit="@ValidSubmit">
             <DataAnnotationsValidator />
 
-            <div class="modal" tabindex="-1" style="display:block" role="dialog">
+            <div class="modal" tabindex="-1" style="display: block; height: 75%;" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -107,28 +139,23 @@
                             <!--Button to close the popup-->
                             <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" style="width: max-content;">
                             <!--Selection options dropdown list-->
                             <InputSelect id="image" type="text" @bind-Value="ModelImage">
                                 @foreach (var item in Items)
                                         {
-                                            <option value="@item.Image">@item.Name</option>
+                                    <option value="@item.Image">@item.Name</option>
                                         }
                             </InputSelect>
                             <ValidationMessage For="@(() => Items[0].Image)" />
                         </div>
-                        <div class="modal-footer" style="text-align:center">
-                            <button type="submit" class="oi oi-circle-check" aria-hidden="true"> Select </button>
+                        <div class="modal-footer" style="justify-content: center;">
+                            <button type="submit" class="btn-success" aria-hidden="true"> Select Item </button>
                         </div>
                     </div>
                 </div>
             </div>
         </EditForm>
-
-    }
-    else
-    {
-        <p>Loading data...</p>
     }
 }
 
@@ -149,20 +176,32 @@
         padding: 70px 0;
         vertical-align: middle
     }
-    .PaneImage {
-        width: 300px;
-        height: 250px;
-    }
 </style>
 
 @code {
-    bool displayButton = true;
+
+    [Parameter] public List<Item> Items { get; set; } = new List<Item>();
+    string ModelImage = "";
+    //TODO : place string into list<string>, not just six different strings
+    string[] PaneImages = new string[6];
+
+    TableState _tableState = new TableState();
+
     bool[] displayButtons = new bool[] { true, true, true, true, true, true };
     int runningCount = 0;
 
     bool imagePopup = false;
 
-    //Counter state management
+    protected override void OnInitialized()
+    {
+        _tableState.StateChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        _tableState.StateChanged -= StateHasChanged;
+    }
+
     //TODO : convert into switch statement
     void displayButtonOne()
     {
@@ -201,44 +240,41 @@
         {
             case 1:
                 displayButtons[0] = false;
-                PaneOne = ModelImage;
+                PaneImages[0] = ModelImage;
                 Console.WriteLine("Button one works");
+                _tableState.SetCurrentImages(1, PaneImages[0]);
                 break;
             case 2:
                 displayButtons[1] = false;
-                PaneTwo = ModelImage;
+                PaneImages[1] = ModelImage;
                 Console.WriteLine("Button two works");
+                _tableState.SetCurrentImages(2, PaneImages[1]);
                 break;
             case 3:
                 displayButtons[2] = false;
-                PaneThree = ModelImage;
+                PaneImages[2] = ModelImage;
                 Console.WriteLine("Button three works");
+                _tableState.SetCurrentImages(3, PaneImages[2]);
                 break;
             case 4:
                 displayButtons[3] = false;
-                PaneFour = ModelImage;
+                PaneImages[3] = ModelImage;
                 Console.WriteLine("Button four works");
+                _tableState.SetCurrentImages(4, PaneImages[3]);
                 break;
             case 5:
                 displayButtons[4] = false;
-                PaneFive = ModelImage;
+                PaneImages[4] = ModelImage;
                 Console.WriteLine("Button five works");
+                _tableState.SetCurrentImages(5, PaneImages[4]);
                 break;
             case 6:
                 displayButtons[5] = false;
-                PaneSix = ModelImage;
+                PaneImages[5] = ModelImage;
                 Console.WriteLine("Button six works");
+                _tableState.SetCurrentImages(6, PaneImages[5]);
                 break;
         }
-        if (runningCount == 1)
-        {
-            displayButtons[0] = false;
-        }
-    }
-    //TODO : re-show button to change the item object inside the pane
-    void ShowButton()
-    {
-        displayButton = true;
     }
 
     void ClosePopup()
@@ -257,13 +293,10 @@
         ClosePopup();
     }
 
-    [Parameter] public List<Item> Items { get; set; } = new List<Item>();
-    string ModelImage = "";
-    //TODO : place string into list<string>, not just six different strings
-    public string PaneOne = "";
-    public string PaneTwo = "";
-    public string PaneThree = "";
-    public string PaneFour = "";
-    public string PaneFive = "";
-    public string PaneSix = "";
+    bool loadState = false;
+    void ShowState()
+    {
+        loadState = true;
+    }
+
 }

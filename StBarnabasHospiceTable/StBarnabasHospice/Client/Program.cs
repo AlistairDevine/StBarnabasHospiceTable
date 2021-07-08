@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using StBarnabasHospice.Client.Pages.Session_State;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -21,6 +22,7 @@ namespace StBarnabasHospice.Client
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             //DI services
             builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddSingleton<TableState>();
 
             await builder.Build().RunAsync();
         }

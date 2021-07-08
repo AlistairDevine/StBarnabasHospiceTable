@@ -443,6 +443,19 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "StBarnabasHospiceTable.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StBarnabasHospiceTable.Shared.dll": {}
+        }
       }
     }
   },
@@ -1652,6 +1665,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "StBarnabasHospiceTable.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Shared/StBarnabasHospiceTable.Shared.csproj",
+      "msbuildProject": "../Shared/StBarnabasHospiceTable.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1660,6 +1678,7 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.Build >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 3.2.1",
+      "StBarnabasHospiceTable.Shared >= 1.0.0",
       "System.Net.Http.Json >= 3.2.0"
     ]
   },
@@ -1697,7 +1716,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj": {
+              "projectPath": "C:\\Users\\Dvine\\Documents\\GitHub\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\StBarnabasHospiceTable\\Shared\\StBarnabasHospiceTable.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

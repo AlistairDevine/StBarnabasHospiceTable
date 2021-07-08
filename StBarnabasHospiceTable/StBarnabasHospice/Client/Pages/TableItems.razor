@@ -2,29 +2,19 @@
 
 @inject HttpClient httpClient
 
-<h3>Object Table</h3>
-<!--State management now call the GetCurrentCount() method to get the current count-->
+<!--TODO : State management, save images already in table -->
 
-<style>
-    a.button {
-        border: 0.1em solid #000000;
-        border-radius: 0.12em;
-        box-sizing: border-box;
-        color: #000000;
-    }
+@if (isLoaded)
+{
+    <TableTemplate Items="Items" />
 
-        a.button:hover {
-            color: #FFFFFF;
-            background-color: #000000;
-        }
-
-    .container-pane {
-        padding: 70px 0;
-        vertical-align: middle
-    }
-</style>
-
-<TableTemplate Items="Items" />
+}
+else
+{
+    <div style="position:absolute; top:30vh; width:100%; text-align:center">
+        <p><i class="fas fa-spin fa-spinner"></i> Table object is loading...</p>
+    </div>
+}
 
 @code {
     /// <summary>
@@ -32,26 +22,7 @@
     /// </summary>
     private List<Item> Items = new List<Item>();
 
-    /// <summary>
-    /// Button / Session State  code
-    /// </summary>
-    //Have display button1, button2, button3, button4...
-    //OR
-    //Figure out a reference id type for each button
-    int buttonCount = 1;
-    int buttonSection = 3;
-
-    //PWD:: Research
-    private void buttonCounting()
-    {
-        //Session State management calls the GetCurrentCount method for the current count
-        //int buttonCount = CounterState.GetCurrentCount();
-        //Set the current count to the button value
-        //...
-        //Set Current count on the Session State object
-        //CounterState.UpdateCurrentCount(buttonCount);
-    }
-
+    bool isLoaded = false;
     /// <summary>
     /// Rendering code
     /// </summary>
@@ -59,5 +30,6 @@
     protected override async Task OnInitializedAsync()
     {
         Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        isLoaded = true;
     }
 } 
