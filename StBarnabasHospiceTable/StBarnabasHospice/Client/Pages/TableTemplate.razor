@@ -1,14 +1,17 @@
 ﻿<!--TODO : initialisation of table state error-->
-<!--State Management-->
+<!--Adjustable image in accordance to the Pane window size-->
+@using System.Drawing
+@inject IJSRuntime JSRuntime
+@implements IDisposable
 
-<div class="container-fluid border border-primary" style="text-align:center; width: 100%; height: 80%">
+<div class="container-fluid border border-primary" style="text-align:center; max-width: 100%; max-height: 100%; width: 100%; height: 80%;">
     <Split>
         <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
                 <SplitPane MinSize="0">
                     @if (displayButtons?[0] == true)
                     {
-                        <div class="container-pane button_container">
+                        <div class="container-pane button_container" id="paneOne">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius: 35%; padding: 50px" @onclick="displayButtonOne"></a>
                         </div>
                     }
@@ -17,7 +20,7 @@
                         //TODO : Dynamic naming of alt string
                         //TODO: (Javascript) adjust image size to pane size changes
                         <div class="button_container">
-                            <img class="PaneImage ImageOne" style="" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
+                            <img class="ImageOne" style="@PaneCssClass" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
                         </div>
                     }
                 </SplitPane>
@@ -38,7 +41,7 @@
             </Split>
         </SplitPane>
         <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
                 <SplitPane MinSize="0">
                     @if (displayButtons[2] == true)
                     {
@@ -70,7 +73,7 @@
             </Split>
         </SplitPane>
         <SplitPane SizeInPercentage="33" MinSize="0">
-            <Split Direction="@SplitDirection.Vertical" GutterSize="5">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
                 <SplitPane MinSize="0">
                     @if (displayButtons[4] == true)
                     {
@@ -104,6 +107,7 @@
     </Split>
 </div>
 
+<!--State Management-->
 <button @onclick="ShowState">Display state</button>
 @if (loadState)
 {
@@ -112,6 +116,9 @@
         <p>@_tableState.GetCurrentImage(i);</p>
     }
 }
+
+<!--Adjustable pane iamge test : REMOVE LATER-->
+<div>@_windowPane.Width x @_windowPane.Height</div>
 
 
 @if (imagePopup == true)
@@ -182,7 +189,6 @@
 
     [Parameter] public List<Item> Items { get; set; } = new List<Item>();
     string ModelImage = "";
-    //TODO : place string into list<string>, not just six different strings
     string[] PaneImages = new string[6];
 
     TableState _tableState = new TableState();
@@ -299,4 +305,25 @@
         loadState = true;
     }
 
+    public Size _windowPane;
+    private string PaneCssClass => $"width: {_windowPane.Width}px; height: {_windowPane.Height}px;";
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        //TODO : add different pane javascript methods for all six pane images to be adjustable
+
+        //BUG: 800x818 bug adjustment is made with the image to expand the whole page off screen, if statement to stop???
+        if (firstRender)
+        {
+            var dotNetObjectReference = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("blazorInterop.registerResizeHandler", dotNetObjectReference);
+        }
+    }
+
+    [JSInvokable]
+    public void SetWindowPaneSize(Size windowPane)
+    {
+        _windowPane = windowPane;
+        StateHasChanged();
+    }
 }
