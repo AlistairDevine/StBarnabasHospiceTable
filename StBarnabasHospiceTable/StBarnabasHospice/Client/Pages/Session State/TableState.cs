@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace StBarnabasHospice.Client.Pages.Session_State
 {
-    public class TableState
+    public class TableState : ITableState
     {
         private string[] _currentImages = new string[6];
 
