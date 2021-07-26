@@ -22,7 +22,7 @@ namespace StBarnabasHospice.Server.Controllers
             _logger = logger;
             _context = context;
         }
-        //Logger???
+        //TODO : Logger???
 
         //Http Connection actions
         //GET request for all items method, api/<controller>

@@ -16,9 +16,11 @@ else
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
+    public ITableState tableState = new TableState();
+
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(4000);
+        await Task.Delay(100);
         isLoaded = true;
     }
 }

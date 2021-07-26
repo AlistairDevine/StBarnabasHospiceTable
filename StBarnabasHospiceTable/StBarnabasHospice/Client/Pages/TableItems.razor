@@ -30,6 +30,11 @@ else
     protected override async Task OnInitializedAsync()
     {
         Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        //EXAMPLE : of api error handling to be placed into service layer
+        if (Items == null)
+        {
+            throw new Exception(Items.ToString());
+        }
         isLoaded = true;
     }
 } 

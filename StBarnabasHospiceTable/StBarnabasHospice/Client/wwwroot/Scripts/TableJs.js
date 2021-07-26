@@ -5,8 +5,8 @@ blazorInterop.registerResizeHandler = function (windowPaneObject) {
     function resizeHandler() {
         windowPaneObject.invokeMethodAsync("SetWindowPaneSize",
             {
-                width: paneOne.width,
-                height: paneOne.height
+                width: paneOne.clientWidth,
+                height: paneOne.clientHeight
             });
     };
 
@@ -15,13 +15,12 @@ blazorInterop.registerResizeHandler = function (windowPaneObject) {
 
     //Reigster event handler
     //RESEARCH : DOM events (https://www.w3schools.com/jsref/dom_obj_event.asp)
-    window.addEventListener("click", resizeHandler);
+    window.document.querySelector(`div[_bl_5]`).addEventListener("resize", resizeHandler);
 };
 
-blazorInterop.resizePane = function () {
+blazorInterop.testPane = function () {
     const paneOne = document.querySelector(`div[_bl_5]`);
     return paneOne.width;
-    }
 }
 
 //ERROR : event handlers not the cause of the problem
