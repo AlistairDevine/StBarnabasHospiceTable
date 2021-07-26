@@ -1,0 +1,27 @@
+﻿@if (isLoaded)
+{
+    @ChildContent
+}
+else
+{
+    <div style="position:absolute; top:30vh; width:100%; text-align:center">
+        <h1>St Barnabas</h1>
+        <p><i class="fas fa-spin fa-spinner"></i> Table object is loading...</p>
+    </div>
+}
+
+@code {
+    bool isLoaded;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public ITableState tableState = new TableState();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(100);
+        isLoaded = true;
+    }
+
+}

@@ -1,0 +1,332 @@
+﻿<!--TODO : initialisation of table state error-->
+<!--Adjustable image in accordance to the Pane window size-->
+@using System.Drawing
+@inject IJSRuntime JSRuntime
+@inject ITableState _tableState
+<!--TODO : Adjust the container-fluid scss class to remove padding right to help center the split window frame-->
+<div class="container-fluid border border-primary" style="text-align:center; max-width: 100%; max-height: 100%; width: 100%; height: 80%;">
+    <Split>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
+                <SplitPane MinSize="0">
+                    @if (displayButtons?[0] == true)
+                    {
+                        <div class="container-pane button_container" id="paneOne">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius: 35%; padding: 50px" @onclick="displayButtonOne"></a>
+                        </div>
+                    }
+                    else if (displayButtons[0] == false)
+                    {
+                        //TODO : Dynamic naming of alt string
+                        //TODO: (Javascript) adjust image size to pane size changes
+                        <div class="button_container">
+                            <img class="ImageOne" style="@PaneCssClass" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButtons?[1] == true)
+                    {
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonTwo"></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button_container">
+                            <img class="PaneImage ImageTwo" placeholder="display panel two" alt="Panel two image" src="@_tableState.GetCurrentImage(2)" @onclick="displayButtonTwo" />
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
+                <SplitPane MinSize="0">
+                    @if (displayButtons[2] == true)
+                    {
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonThree"></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel three image" src="@_tableState.GetCurrentImage(3)" @onclick="displayButtonThree" />
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButtons[3] == true)
+                    {
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonFour"></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button_container">
+                            <img class="PaneImage ImageTwo" placeholder="display panel one" alt="Panel four image" src="@_tableState.GetCurrentImage(4)" @onclick="displayButtonFour" />
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+        <SplitPane SizeInPercentage="33" MinSize="0">
+            <Split Direction="@SplitDirection.Vertical" GutterSize="7">
+                <SplitPane MinSize="0">
+                    @if (displayButtons[4] == true)
+                    {
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonFive"></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel five image" src="@_tableState.GetCurrentImage(5)" @onclick="displayButtonFive" />
+                        </div>
+                    }
+                </SplitPane>
+                <SplitPane MinSize="0">
+                    @if (displayButtons[5] == true)
+                    {
+                        <div class="container-pane button_container">
+                            <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius:35%; padding:50px" @onclick="displayButtonSix"></a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="button_container">
+                            <img class="PaneImage ImageThree" placeholder="display panel three" alt="Panel six image" src="@PaneImages[5]" @onclick="displayButtonSix" />
+                        </div>
+                    }
+                </SplitPane>
+            </Split>
+        </SplitPane>
+    </Split>
+</div>
+
+<!--State Management-->
+<button @onclick="ShowState">Display state</button>
+@if (loadState)
+{
+    for (int i = 1; i < 6; i++)
+    {
+        <p>@_tableState.GetCurrentImage(i);</p>
+    }
+}
+
+<!--Adjustable pane iamge test : REMOVE LATER-->
+<div>@_windowPane.Width x @_windowPane.Height</div>
+
+
+@if (imagePopup == true)
+{
+    <!--TODO : time delay on loading data from database causing error of null reference in Items model-->
+    @if (Items is null)
+    {
+        <EditForm>
+            <div class="model" tabindex="-1" style="height: 50px;" role="dialog">
+                <p>...loading</p>
+            </div>
+        </EditForm>
+    }
+    else
+    {
+        <EditForm Model="@Items" OnValidSubmit="@ValidSubmit">
+            <DataAnnotationsValidator />
+
+            <div class="modal" tabindex="-1" style="display: block; height: 75%;" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title"> Select image </h3>
+                            <p>@runningCount</p>
+                            <!--Button to close the popup-->
+                            <a type="button" class="close oi oi-circle-x" aria-hidden="true" @onclick="ClosePopup"></a>
+                        </div>
+                        <div class="modal-body" style="width: max-content;">
+                            <!--Selection options dropdown list-->
+                            <InputSelect id="image" type="text" @bind-Value="ModelImage">
+                                @foreach (var item in Items)
+                                        {
+                                    <option value="@item.Image">@item.Name</option>
+                                        }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => Items[0].Image)" />
+                        </div>
+                        <div class="modal-footer" style="justify-content: center;">
+                            <button type="submit" class="btn-success" aria-hidden="true"> Select Item </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    }
+}
+
+<style>
+    a.button {
+        border: 0.1em solid #000000;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        color: #000000;
+    }
+
+        a.button:hover {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+
+    .container-pane {
+        padding: 70px 0;
+        vertical-align: middle
+    }
+</style>
+
+@code {
+
+    [Parameter] public List<Item> Items { get; set; } = new List<Item>();
+    string ModelImage = "";
+    string[] PaneImages = new string[6];
+
+    bool[] displayButtons = new bool[] { true, true, true, true, true, true };
+    int runningCount = 0;
+
+    bool imagePopup = false;
+
+    protected override void OnInitialized()
+    {
+        if (_tableState.GetCurrentImage(1) is not null)
+        {
+            displayButtons[0] = false;
+        }
+        //TODO : Add switch statement or method reference to switch statement and repeat pane one for the other 5 panes for persistent data control
+        _tableState.StateChanged += StateHasChanged;
+    }
+    public void Dispose()
+    {
+        _tableState.StateChanged -= StateHasChanged;
+    }
+
+    //TODO : convert into switch statement
+    void displayButtonOne()
+    {
+        runningCount = 1;
+        ShowPopup();
+    }
+    void displayButtonTwo()
+    {
+        runningCount = 2;
+        ShowPopup();
+    }
+    void displayButtonThree()
+    {
+        runningCount = 3;
+        ShowPopup();
+    }
+    void displayButtonFour()
+    {
+        runningCount = 4;
+        ShowPopup();
+    }
+    void displayButtonFive()
+    {
+        runningCount = 5;
+        ShowPopup();
+    }
+    void displayButtonSix()
+    {
+        runningCount = 6;
+        ShowPopup();
+    }
+
+    void CloseButton()
+    {
+        switch (runningCount)
+        {
+            case 1:
+                displayButtons[0] = false;
+                PaneImages[0] = ModelImage;
+                Console.WriteLine("Button one works");
+                _tableState.SetCurrentImages(1, PaneImages[0]);
+                //RESEARCH : Javascript method trigger???, (persistent eventlistener) OnInitialized image wont trigger javascript eventListener???
+                break;
+            case 2:
+                displayButtons[1] = false;
+                PaneImages[1] = ModelImage;
+                Console.WriteLine("Button two works");
+                _tableState.SetCurrentImages(2, PaneImages[1]);
+                break;
+            case 3:
+                displayButtons[2] = false;
+                PaneImages[2] = ModelImage;
+                Console.WriteLine("Button three works");
+                _tableState.SetCurrentImages(3, PaneImages[2]);
+                break;
+            case 4:
+                displayButtons[3] = false;
+                PaneImages[3] = ModelImage;
+                Console.WriteLine("Button four works");
+                _tableState.SetCurrentImages(4, PaneImages[3]);
+                break;
+            case 5:
+                displayButtons[4] = false;
+                PaneImages[4] = ModelImage;
+                Console.WriteLine("Button five works");
+                _tableState.SetCurrentImages(5, PaneImages[4]);
+                break;
+            case 6:
+                displayButtons[5] = false;
+                PaneImages[5] = ModelImage;
+                Console.WriteLine("Button six works");
+                _tableState.SetCurrentImages(6, PaneImages[5]);
+                break;
+        }
+    }
+
+    void ClosePopup()
+    {
+        imagePopup = false;
+        runningCount = 0;
+    }
+    void ShowPopup()
+    {
+        imagePopup = true;
+    }
+
+    void ValidSubmit()
+    {
+        CloseButton();
+        ClosePopup();
+    }
+
+    bool loadState = false;
+    void ShowState()
+    {
+        loadState = true;
+    }
+
+    public Size _windowPane;
+    private string PaneCssClass => $"width: {_windowPane.Width}px; height: {_windowPane.Height}px;";
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        //TODO : add different pane javascript methods for all six pane images to be adjustable
+
+        //BUG: 800x818 bug adjustment is made with the image to expand the whole page off screen, if statement to stop???
+        if (firstRender)
+        {
+            var dotNetObjectReference = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("blazorInterop.registerResizeHandler", dotNetObjectReference);
+        }
+    }
+
+    [JSInvokable]
+    public void SetWindowPaneSize(Size windowPane)
+    {
+        _windowPane = windowPane;
+        StateHasChanged();
+    }
+}

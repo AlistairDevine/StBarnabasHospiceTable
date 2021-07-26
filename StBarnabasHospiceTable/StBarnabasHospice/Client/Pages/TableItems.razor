@@ -1,0 +1,40 @@
+﻿@page "/table"
+
+@inject HttpClient httpClient
+
+<!--TODO : State management, save images already in table -->
+
+@if (isLoaded)
+{
+    <TableTemplate Items="Items" />
+
+}
+else
+{
+    <div style="position:absolute; top:30vh; width:100%; text-align:center">
+        <p><i class="fas fa-spin fa-spinner"></i> Table object is loading...</p>
+    </div>
+}
+
+@code {
+    /// <summary>
+    /// Global variables
+    /// </summary>
+    private List<Item> Items = new List<Item>();
+
+    bool isLoaded = false;
+    /// <summary>
+    /// Rendering code
+    /// </summary>
+    /// <returns></returns>
+    protected override async Task OnInitializedAsync()
+    {
+        Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        //EXAMPLE : of api error handling to be placed into service layer
+        if (Items == null)
+        {
+            throw new Exception(Items.ToString());
+        }
+        isLoaded = true;
+    }
+} 
