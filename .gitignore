@@ -351,3 +351,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+StBarnabasHospiceTable/.vs/StBarnabasHospiceTable/DesignTimeBuild/.dtbcache.v2
+StBarnabasHospiceTable/.vs/StBarnabasHospiceTable/v16/.suo
