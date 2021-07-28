@@ -119,7 +119,7 @@
 }
 
 <!--Adjustable pane iamge test : REMOVE LATER-->
-<div>@_windowPane.Width x @_windowPane.Height</div>
+<div>Pane One hidth: @windowPane.Width, Pane One height: @windowPane.Height</div>
 
 
 @if (imagePopup == true)
@@ -197,6 +197,10 @@
 
     bool imagePopup = false;
 
+    //Pane javascript resizing values
+    public Size windowPane;
+    private string PaneCssClass => $"width: {windowPane.Width}px; height: {windowPane.Height}px;";
+
     protected override void OnInitialized()
     {
         if (_tableState.GetCurrentImage(1) is not null)
@@ -205,11 +209,14 @@
         }
         //TODO : Add switch statement or method reference to switch statement and repeat pane one for the other 5 panes for persistent data control
         _tableState.StateChanged += StateHasChanged;
+        OnResize += BrowserHasResized;
     }
 
-    public void Dispose()
+    private async Task BrowserHasResized()
     {
-        _tableState.StateChanged -= StateHasChanged;
+        windowPane = await GetWindowPaneSizes();
+
+        StateHasChanged();
     }
 
     //TODO : convert into switch statement
@@ -310,9 +317,6 @@
         loadState = true;
     }
 
-    public Size _windowPane;
-    private string PaneCssClass => $"width: {_windowPane.Width}px; height: {_windowPane.Height}px;";
-
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         //TODO : add different pane javascript methods for all six pane images to be adjustable
@@ -320,15 +324,30 @@
         //BUG: 800x818 bug adjustment is made with the image to expand the whole page off screen, if statement to stop???
         if (firstRender)
         {
-            var dotNetObjectReference = DotNetObjectReference.Create(this);
-            await JSRuntime.InvokeVoidAsync("blazorInterop.registerResizeHandler", dotNetObjectReference);
+            await JSRuntime.InvokeAsync<object>("blazorInterop.registerResizeCallback");
+            //Javascript Observer Api test function call, WORKING FINALLY
+            await JSRuntime.InvokeVoidAsync("blazorInterop.ApiObserver");
+
+            windowPane = await GetWindowPaneSizes();
         }
     }
 
+    public static event Func<Task> OnResize;
+
     [JSInvokable]
-    public void SetWindowPaneSize(Size windowPane)
+    public static async Task OnBrowserResize()
     {
-        _windowPane = windowPane;
-        StateHasChanged();
+        await OnResize?.Invoke();
+    }
+
+    private async Task<Size> GetWindowPaneSizes()
+    {
+        return await JSRuntime.InvokeAsync<Size>("blazorInterop.getPaneOneSize");
+    }
+
+    public void Dispose()
+    {
+        _tableState.StateChanged -= StateHasChanged;
+        OnResize -= BrowserHasResized;
     }
 }
