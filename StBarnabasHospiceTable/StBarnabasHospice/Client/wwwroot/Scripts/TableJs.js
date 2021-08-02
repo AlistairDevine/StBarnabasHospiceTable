@@ -1,29 +1,45 @@
 ﻿var blazorInterop = blazorInterop || {};
 
-blazorInterop.registerResizeHandler = function (windowPaneObject) {
-    const paneOne = document.querySelector(`div[_bl_5]`);
-    function resizeHandler() {
-        windowPaneObject.invokeMethodAsync("SetWindowPaneSize",
+blazorInterop.registerresizehandler = function (windowpaneobject) {
+    function resizehandler() {
+        windowpaneobject.invokemethodasync("setwindowpanesize",
             {
-                width: paneOne.width,
-                height: paneOne.height
+                width: window.width,
+                height: window.height
             });
     };
 
-    //Set up initial values
-    resizeHandler();
+    //set up initial values
+    resizehandler();
 
-    //Reigster event handler
-    //RESEARCH : DOM events (https://www.w3schools.com/jsref/dom_obj_event.asp)
-    window.addEventListener("click", resizeHandler);
+    window.addEventListener("resize", resizeHandler);
 };
 
-blazorInterop.resizePane = function () {
+blazorInterop.getPaneOneSize = function () {
     const paneOne = document.querySelector(`div[_bl_5]`);
-    return paneOne.width;
-    }
+    return {
+        width: paneOne.offsetWidth,
+        height: paneOne.offsetHeight
+    };
 }
 
-//ERROR : event handlers not the cause of the problem
-//ERROR : type of width not the cause of the problem
+blazorInterop.registerResizeCallback = function () {
+    window.addEventListener("resize", blazorInterop.resized);
+}
 
+blazorInterop.resized = function () {
+    DotNet.invokeMethodAsync("StBarnabasHospice.Client", 'OnBrowserResize').then(data => data);
+}
+
+blazorInterop.ApiObserver = function () {
+    const myObserver = new ResizeObserver(entries => {
+        entries.forEach(entry => {
+            console.log(`${entry.target.className} width : ${entry.contentRect.width}, ${entry.target.className} height: ${entry.contentRect.height}`);
+        });
+    });
+
+    const windows = document.querySelector('.PaneOne');
+    for (pane in windows) {
+        myObserver.observe(windows);
+    }
+}

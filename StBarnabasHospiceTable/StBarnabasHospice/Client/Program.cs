@@ -22,7 +22,7 @@ namespace StBarnabasHospice.Client
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             //DI services
             builder.Services.AddBlazoredLocalStorage();
-            builder.Services.AddSingleton<TableState>();
+            builder.Services.AddSingleton<ITableState, TableState>();
 
             await builder.Build().RunAsync();
         }

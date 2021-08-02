@@ -3,7 +3,8 @@
 @using System.Drawing
 @inject IJSRuntime JSRuntime
 @implements IDisposable
-<!--TODO : Adjust the container-fluid scss class to remove padding right to help center the split window frame-->
+@inject ITableState _tableState
+<!--TODO : Adjust the container-fluid scss class to remove padding right to help center the split window frame (remove padding-right, change padding-left to 7px)-->
 <div class="container-fluid border border-primary" style="text-align:center; max-width: 100%; max-height: 100%; width: 100%; height: 80%;">
     <Split>
         <SplitPane SizeInPercentage="33" MinSize="0">
@@ -11,16 +12,20 @@
                 <SplitPane MinSize="0">
                     @if (displayButtons?[0] == true)
                     {
-                        <div class="container-pane button_container" id="paneOne">
+                    <div class="windowPane">
+                        <div class="PaneOne container-pane pane" id="One">
                             <a class="oi oi-plus btn button" aria-hidden="true" style="border-radius: 35%; padding: 50px" @onclick="displayButtonOne"></a>
                         </div>
+                    </div>
                     }
                     else if (displayButtons[0] == false)
                     {
                         //TODO : Dynamic naming of alt string
                         //TODO: (Javascript) adjust image size to pane size changes
-                        <div class="button_container">
-                            <img class="ImageOne" style="@PaneCssClass" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
+                        <div class="windowPane">
+                            <div class="PaneOne button_container pane" id="One">
+                                <img class="ImageOne" style="@PaneCssClass" placeholder="display panel one" alt="@ModelImage image" src="@_tableState.GetCurrentImage(1)" @onclick="displayButtonOne" />
+                            </div>
                         </div>
                     }
                 </SplitPane>
@@ -191,21 +196,32 @@
     string ModelImage = "";
     string[] PaneImages = new string[6];
 
-    ITableState _tableState = new TableState();
-
     bool[] displayButtons = new bool[] { true, true, true, true, true, true };
     int runningCount = 0;
 
     bool imagePopup = false;
 
+    //Pane javascript resizing values
+    public Size _windowPane;
+    private string PaneCssClass => $"width: {_windowPane.Width}px; height: {_windowPane.Height}px;";
+
     protected override void OnInitialized()
     {
+        if (_tableState.GetCurrentImage(1) is not null)
+        {
+            displayButtons[0] = false;
+        }
+        //TODO : Add switch statement or method reference to switch statement and repeat pane one for the other 5 window panes for persistent data control
         _tableState.StateChanged += StateHasChanged;
+        OnResize += BrowserHasResized;
+
     }
 
-    public void Dispose()
+    private async Task BrowserHasResized()
     {
-        _tableState.StateChanged -= StateHasChanged;
+        _windowPane = await GetWindowPaneSizes();
+
+        StateHasChanged();
     }
 
     //TODO : convert into switch statement
@@ -249,6 +265,8 @@
                 PaneImages[0] = ModelImage;
                 Console.WriteLine("Button one works");
                 _tableState.SetCurrentImages(1, PaneImages[0]);
+                //RESEARCH : Javascript method trigger???
+
                 break;
             case 2:
                 displayButtons[1] = false;
@@ -305,9 +323,6 @@
         loadState = true;
     }
 
-    public Size _windowPane;
-    private string PaneCssClass => $"width: {_windowPane.Width}px; height: {_windowPane.Height}px;";
-
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         //TODO : add different pane javascript methods for all six pane images to be adjustable
@@ -315,15 +330,29 @@
         //BUG: 800x818 bug adjustment is made with the image to expand the whole page off screen, if statement to stop???
         if (firstRender)
         {
-            var dotNetObjectReference = DotNetObjectReference.Create(this);
-            await JSRuntime.InvokeVoidAsync("blazorInterop.registerResizeHandler", dotNetObjectReference);
+            await JSRuntime.InvokeAsync<object>("blazorInterop.registerResizeCallback");
+            //Javascript Observer Api function call
+            await JSRuntime.InvokeVoidAsync("blazorInterop.ApiObserver");
+            _windowPane = await GetWindowPaneSizes();
         }
     }
 
+    public static event Func<Task> OnResize;
+
     [JSInvokable]
-    public void SetWindowPaneSize(Size windowPane)
+    public static async Task OnBrowserResize()
     {
-        _windowPane = windowPane;
-        StateHasChanged();
+        await OnResize?.Invoke();
+    }
+
+    private async Task<Size> GetWindowPaneSizes()
+    {
+        return await JSRuntime.InvokeAsync<Size>("blazorInterop.getPaneOneSize");
+    }
+
+    public void Dispose()
+    {
+        _tableState.StateChanged -= StateHasChanged;
+        OnResize -= BrowserHasResized;
     }
 }

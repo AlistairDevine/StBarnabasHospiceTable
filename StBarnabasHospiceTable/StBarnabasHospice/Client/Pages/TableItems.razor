@@ -1,7 +1,6 @@
 ﻿@page "/table"
 
 @inject HttpClient httpClient
-
 <!--TODO : State management, save images already in table -->
 
 @if (isLoaded)
@@ -24,12 +23,19 @@ else
 
     bool isLoaded = false;
     /// <summary>
-    /// Rendering code
+    /// Rendering server-side code through the api endpoint call
     /// </summary>
     /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
+        //TODO : on first render of the page, dont load Item every time the user enter the page
         Items = await httpClient.GetFromJsonAsync<List<Item>>("api/Item");
+        // EXAMPLE : of api error handling to be placed into service layer
+        if (Items == null)
+        {
+            throw new Exception(Items.ToString());
+        }
         isLoaded = true;
     }
+
 } 
