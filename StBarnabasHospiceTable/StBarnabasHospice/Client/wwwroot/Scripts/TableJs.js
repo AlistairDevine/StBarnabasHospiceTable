@@ -1,5 +1,5 @@
 ﻿var blazorInterop = blazorInterop || {};
-
+//Testing enviorment
 blazorInterop.registerresizehandler = function (windowpaneobject) {
     function resizehandler() {
         windowpaneobject.invokemethodasync("setwindowpanesize",
@@ -30,16 +30,37 @@ blazorInterop.registerResizeCallback = function () {
 blazorInterop.resized = function () {
     DotNet.invokeMethodAsync("StBarnabasHospice.Client", 'OnBrowserResize').then(data => data);
 }
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+//Working, single version
+blazorInterop.apiObserver = function () {
+    const windowPaneOne = document.querySelector(`div[_bl_5]`);
 
-blazorInterop.ApiObserver = function () {
     const myObserver = new ResizeObserver(entries => {
         entries.forEach(entry => {
-            console.log(`${entry.target.className} width : ${entry.contentRect.width}, ${entry.target.className} height: ${entry.contentRect.height}`);
+            console.log(`${entry.target.className} width : ${Math.floor(entry.contentRect.width)}, ${entry.target.className} height: ${Math.floor(entry.contentRect.height)}`);
+
+            document.querySelector(`.windowPane`).style.width = `${Math.floor(entry.contentRect.width)}px;`;
+            document.querySelector(`.windowPane`).style.height = `${Math.floor(entry.contentRect.height)}px;`;
         });
     });
 
-    const windows = document.querySelector('.PaneOne');
-    for (pane in windows) {
-        myObserver.observe(windows);
-    }
+    myObserver.observe(windowPaneOne);
+}
+//Working, Multi-version
+blazorInterop.multiObserver = function () {
+    const windowPaneOne = document.querySelectorAll(`.windowPane`);
+
+    const myObserver = new ResizeObserver(entries => {
+        entries.forEach(entry => {
+            console.log(`.${entry.target.className.replace(" ", ".")} width : ${Math.floor(entry.contentRect.width)}, ${entry.target.className} height: ${Math.floor(entry.contentRect.height)}`);
+
+            document.querySelector(`.${entry.target.className.replace(" ", ".")}`).style.width = `${Math.floor(entry.contentRect.width)}px;`;
+            document.querySelector(`.${entry.target.className.replace(" ", ".")}`).style.height = `${Math.floor(entry.contentRect.height)}px;`;
+
+        });
+    });
+
+    windowPaneOne.forEach(pane => {
+        myObserver.observe(pane);
+    });
 }
