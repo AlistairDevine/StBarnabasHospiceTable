@@ -99,12 +99,15 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
 #line default
 #line hidden
 #nullable disable
-            __builder.OpenComponent<Blazorme.SplitPane>(0);
-            __builder.AddAttribute(1, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(2, "<div class=\"container-pane\"><a class=\"oi oi-plus btn button1\" aria-hidden=\"true\" style=\"border-radius:35%; padding:50px\"></a></div>");
+            __builder.AddContent(0, "    ");
+            __builder.OpenComponent<Blazorme.SplitPane>(1);
+            __builder.AddAttribute(2, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(3, "\r\n        ");
+                __builder2.AddMarkupContent(4, "<div class=\"container-pane\">\r\n            <a class=\"oi oi-plus btn button1\" aria-hidden=\"true\" style=\"border-radius:35%; padding:50px\"></a>\r\n        </div>\r\n    ");
             }
             ));
             __builder.CloseComponent();
+            __builder.AddMarkupContent(5, "\r\n");
 #nullable restore
 #line 15 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ButtonTemplate.razor"
 }
@@ -112,7 +115,8 @@ using StBarnabasHospiceTable.Client.Pages.SessionState;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddMarkupContent(3, @"<style>
+            __builder.AddMarkupContent(6, "\r\n\r\n");
+            __builder.AddMarkupContent(7, @"<style>
     a.button1 {
         border: 0.1em solid #000000;
         border-radius: 0.12em;

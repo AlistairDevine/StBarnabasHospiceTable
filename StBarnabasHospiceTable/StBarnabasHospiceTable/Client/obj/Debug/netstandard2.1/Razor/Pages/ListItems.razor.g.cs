@@ -109,11 +109,12 @@ using StBarnabasHospiceTable.Client.Services;
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "id", "items");
             __builder.AddAttribute(2, "class", "widget");
-            __builder.OpenElement(3, "h3");
-            __builder.AddContent(4, "Items");
-            __builder.OpenElement(5, "button");
-            __builder.AddAttribute(6, "type", "submit");
-            __builder.AddAttribute(7, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(3, "\r\n    \r\n    ");
+            __builder.OpenElement(4, "h3");
+            __builder.AddContent(5, "Items");
+            __builder.OpenElement(6, "button");
+            __builder.AddAttribute(7, "type", "submit");
+            __builder.AddAttribute(8, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 13 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                              AddItem
@@ -122,16 +123,18 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(8, "class", "btn btn-primary edit-btn float-right");
-            __builder.AddContent(9, "Add PNG Item");
+            __builder.AddAttribute(9, "class", "btn btn-primary edit-btn float-right");
+            __builder.AddContent(10, "Add PNG Item");
             __builder.CloseElement();
             __builder.CloseElement();
-            __builder.AddMarkupContent(10, "\r\n    \r\n    ");
-            __builder.OpenElement(11, "table");
-            __builder.AddAttribute(12, "class", "table table-bordered");
-            __builder.AddAttribute(13, "style", "width:90%;");
-            __builder.AddMarkupContent(14, "<thead><tr><th scope=\"col\">Item Name</th>\r\n                <th scope=\"col\">Description</th>\r\n                \r\n                <th scope=\"col\">Image</th></tr></thead>\r\n        \r\n        ");
-            __builder.OpenElement(15, "tbody");
+            __builder.AddMarkupContent(11, "\r\n    \r\n    ");
+            __builder.OpenElement(12, "table");
+            __builder.AddAttribute(13, "class", "table table-bordered");
+            __builder.AddAttribute(14, "style", "width:90%;");
+            __builder.AddMarkupContent(15, "\r\n        \r\n        ");
+            __builder.AddMarkupContent(16, "<thead>\r\n            <tr>\r\n                <th scope=\"col\">Item Name</th>\r\n                <th scope=\"col\">Description</th>\r\n                \r\n                <th scope=\"col\">Image</th>\r\n            </tr>\r\n        </thead>\r\n        \r\n        ");
+            __builder.OpenElement(17, "tbody");
+            __builder.AddMarkupContent(18, "\r\n");
 #nullable restore
 #line 27 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
              foreach (var item in Items)
@@ -140,34 +143,32 @@ using StBarnabasHospiceTable.Client.Services;
 #line default
 #line hidden
 #nullable disable
-            __builder.OpenElement(16, "tr");
-            __builder.OpenElement(17, "td");
-            __builder.AddContent(18, 
+            __builder.AddContent(19, "                ");
+            __builder.OpenElement(20, "tr");
+            __builder.AddMarkupContent(21, "\r\n                    ");
+            __builder.OpenElement(22, "td");
 #nullable restore
 #line 30 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
-                         item.Name
+__builder.AddContent(23, item.Name);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
-            __builder.AddMarkupContent(19, "\r\n                    ");
-            __builder.OpenElement(20, "td");
-            __builder.AddContent(21, 
+            __builder.AddMarkupContent(24, "\r\n                    ");
+            __builder.OpenElement(25, "td");
 #nullable restore
 #line 31 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
-                         item.Description
+__builder.AddContent(26, item.Description);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
-            __builder.AddMarkupContent(22, "\r\n                    ");
-            __builder.OpenElement(23, "td");
-            __builder.OpenElement(24, "img");
-            __builder.AddAttribute(25, "src", 
+            __builder.AddMarkupContent(27, "\r\n                    ");
+            __builder.OpenElement(28, "td");
+            __builder.OpenElement(29, "img");
+            __builder.AddAttribute(30, "src", 
 #nullable restore
 #line 32 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                    item.Image
@@ -178,7 +179,9 @@ using StBarnabasHospiceTable.Client.Services;
             );
             __builder.CloseElement();
             __builder.CloseElement();
+            __builder.AddMarkupContent(31, "\r\n                ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(32, "\r\n");
 #nullable restore
 #line 34 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
             }
@@ -186,21 +189,25 @@ using StBarnabasHospiceTable.Client.Services;
 #line default
 #line hidden
 #nullable disable
+            __builder.AddContent(33, "        ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(34, "\r\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(26, "\r\n    ");
-            __builder.OpenElement(27, "div");
-            __builder.AddContent(28, 
+            __builder.AddMarkupContent(35, "\r\n    ");
+            __builder.OpenElement(36, "div");
+            __builder.AddMarkupContent(37, "\r\n        ");
 #nullable restore
 #line 38 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
-         Message
+__builder.AddContent(38, Message);
 
 #line default
 #line hidden
 #nullable disable
-            );
+            __builder.AddMarkupContent(39, "\r\n    ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(40, "\r\n");
             __builder.CloseElement();
+            __builder.AddMarkupContent(41, "\r\n");
 #nullable restore
 #line 41 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
  if (ShowPopup == true)
@@ -209,22 +216,27 @@ using StBarnabasHospiceTable.Client.Services;
 #line default
 #line hidden
 #nullable disable
-            __builder.OpenElement(29, "div");
-            __builder.AddAttribute(30, "class", "modal");
-            __builder.AddAttribute(31, "tabindex", "-1");
-            __builder.AddAttribute(32, "style", "display:block");
-            __builder.AddAttribute(33, "role", "dialog");
-            __builder.OpenElement(34, "div");
-            __builder.AddAttribute(35, "class", "modal-dialog");
-            __builder.OpenElement(36, "div");
-            __builder.AddAttribute(37, "class", "modal-content");
-            __builder.OpenElement(38, "div");
-            __builder.AddAttribute(39, "class", "modal-header");
-            __builder.AddMarkupContent(40, "<h3 class=\"modal-title\">Add item</h3>\r\n                    \r\n                    ");
-            __builder.OpenElement(41, "button");
-            __builder.AddAttribute(42, "type", "button");
-            __builder.AddAttribute(43, "class", "close");
-            __builder.AddAttribute(44, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.AddMarkupContent(42, "    \r\n    ");
+            __builder.OpenElement(43, "div");
+            __builder.AddAttribute(44, "class", "modal");
+            __builder.AddAttribute(45, "tabindex", "-1");
+            __builder.AddAttribute(46, "style", "display:block");
+            __builder.AddAttribute(47, "role", "dialog");
+            __builder.AddMarkupContent(48, "\r\n        ");
+            __builder.OpenElement(49, "div");
+            __builder.AddAttribute(50, "class", "modal-dialog");
+            __builder.AddMarkupContent(51, "\r\n            ");
+            __builder.OpenElement(52, "div");
+            __builder.AddAttribute(53, "class", "modal-content");
+            __builder.AddMarkupContent(54, "\r\n                ");
+            __builder.OpenElement(55, "div");
+            __builder.AddAttribute(56, "class", "modal-header");
+            __builder.AddMarkupContent(57, "\r\n                    ");
+            __builder.AddMarkupContent(58, "<h3 class=\"modal-title\">Add item</h3>\r\n                    \r\n                    ");
+            __builder.OpenElement(59, "button");
+            __builder.AddAttribute(60, "type", "button");
+            __builder.AddAttribute(61, "class", "close");
+            __builder.AddAttribute(62, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 50 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                                                   ClosePopup
@@ -233,14 +245,17 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(45, "<span aria-hidden=\"true\">X</span>");
+            __builder.AddMarkupContent(63, "\r\n                        ");
+            __builder.AddMarkupContent(64, "<span aria-hidden=\"true\">X</span>\r\n                    ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(65, "\r\n                ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(46, "\r\n                \r\n                ");
-            __builder.OpenElement(47, "div");
-            __builder.AddAttribute(48, "class", "modal-body");
-            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(49);
-            __builder.AddAttribute(50, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddMarkupContent(66, "\r\n                \r\n                ");
+            __builder.OpenElement(67, "div");
+            __builder.AddAttribute(68, "class", "modal-body");
+            __builder.AddMarkupContent(69, "\r\n                    ");
+            __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(70);
+            __builder.AddAttribute(71, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 56 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                       HRItem
@@ -249,7 +264,7 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(51, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(72, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 56 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                                               HandleValidSubmit
@@ -258,21 +273,23 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(52, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(53);
+            __builder.AddAttribute(73, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Forms.EditContext>)((context) => (__builder2) => {
+                __builder2.AddMarkupContent(74, "\r\n                        ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator>(75);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(54, "\r\n                        ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.ValidationSummary>(55);
+                __builder2.AddMarkupContent(76, "\r\n                        ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.ValidationSummary>(77);
                 __builder2.CloseComponent();
-                __builder2.AddMarkupContent(56, "\r\n                        ");
-                __builder2.OpenElement(57, "div");
-                __builder2.AddAttribute(58, "class", "form-group row");
-                __builder2.AddMarkupContent(59, "<label for=\"name\" class=\"col-sm-3\">Name: </label>\r\n                            ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(60);
-                __builder2.AddAttribute(61, "id", "name");
-                __builder2.AddAttribute(62, "class", "form-control col-sm-8");
-                __builder2.AddAttribute(63, "placeholder", "Enter Item Name");
-                __builder2.AddAttribute(64, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(78, "\r\n                        ");
+                __builder2.OpenElement(79, "div");
+                __builder2.AddAttribute(80, "class", "form-group row");
+                __builder2.AddMarkupContent(81, "\r\n                            ");
+                __builder2.AddMarkupContent(82, "<label for=\"name\" class=\"col-sm-3\">Name: </label>\r\n                            ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(83);
+                __builder2.AddAttribute(84, "id", "name");
+                __builder2.AddAttribute(85, "class", "form-control col-sm-8");
+                __builder2.AddAttribute(86, "placeholder", "Enter Item Name");
+                __builder2.AddAttribute(87, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 61 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                                                                              HRItem.Name
@@ -281,19 +298,21 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(65, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Name = __value, HRItem.Name))));
-                __builder2.AddAttribute(66, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Name));
+                __builder2.AddAttribute(88, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Name = __value, HRItem.Name))));
+                __builder2.AddAttribute(89, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Name));
                 __builder2.CloseComponent();
+                __builder2.AddMarkupContent(90, "\r\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(67, "\r\n                        ");
-                __builder2.OpenElement(68, "div");
-                __builder2.AddAttribute(69, "class", "form-group row");
-                __builder2.AddMarkupContent(70, "<label for=\"name\" class=\"col-sm-3\">Description: </label>\r\n                            ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputTextArea>(71);
-                __builder2.AddAttribute(72, "id", "description");
-                __builder2.AddAttribute(73, "class", "form-control col-sm-8");
-                __builder2.AddAttribute(74, "placeholder", "Enter Item Description");
-                __builder2.AddAttribute(75, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(91, "\r\n                        ");
+                __builder2.OpenElement(92, "div");
+                __builder2.AddAttribute(93, "class", "form-group row");
+                __builder2.AddMarkupContent(94, "\r\n                            ");
+                __builder2.AddMarkupContent(95, "<label for=\"name\" class=\"col-sm-3\">Description: </label>\r\n                            ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputTextArea>(96);
+                __builder2.AddAttribute(97, "id", "description");
+                __builder2.AddAttribute(98, "class", "form-control col-sm-8");
+                __builder2.AddAttribute(99, "placeholder", "Enter Item Description");
+                __builder2.AddAttribute(100, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 65 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                                                                                         HRItem.Description
@@ -302,19 +321,21 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(76, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Description = __value, HRItem.Description))));
-                __builder2.AddAttribute(77, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Description));
+                __builder2.AddAttribute(101, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Description = __value, HRItem.Description))));
+                __builder2.AddAttribute(102, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Description));
                 __builder2.CloseComponent();
+                __builder2.AddMarkupContent(103, "\r\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(78, "\r\n                        ");
-                __builder2.OpenElement(79, "div");
-                __builder2.AddAttribute(80, "class", "form-group row");
-                __builder2.AddMarkupContent(81, "<label for=\"name\" class=\"col-sm-3\">Image Link: </label>\r\n                            ");
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(82);
-                __builder2.AddAttribute(83, "id", "image");
-                __builder2.AddAttribute(84, "class", "form-control col-sm-8");
-                __builder2.AddAttribute(85, "placeholder", "Enter Item Image Link");
-                __builder2.AddAttribute(86, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddMarkupContent(104, "\r\n                        ");
+                __builder2.OpenElement(105, "div");
+                __builder2.AddAttribute(106, "class", "form-group row");
+                __builder2.AddMarkupContent(107, "\r\n                            ");
+                __builder2.AddMarkupContent(108, "<label for=\"name\" class=\"col-sm-3\">Image Link: </label>\r\n                            ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(109);
+                __builder2.AddAttribute(110, "id", "image");
+                __builder2.AddAttribute(111, "class", "form-control col-sm-8");
+                __builder2.AddAttribute(112, "placeholder", "Enter Item Image Link");
+                __builder2.AddAttribute(113, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 69 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
                                                                                               HRItem.Image
@@ -323,19 +344,25 @@ using StBarnabasHospiceTable.Client.Services;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(87, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Image = __value, HRItem.Image))));
-                __builder2.AddAttribute(88, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Image));
+                __builder2.AddAttribute(114, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => HRItem.Image = __value, HRItem.Image))));
+                __builder2.AddAttribute(115, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => HRItem.Image));
                 __builder2.CloseComponent();
+                __builder2.AddMarkupContent(116, "\r\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(89, "\r\n                        ");
-                __builder2.AddMarkupContent(90, "<button type=\"submit\" class=\"btn btn-primary edit-btn\">Add Item</button>");
+                __builder2.AddMarkupContent(117, "\r\n                        ");
+                __builder2.AddMarkupContent(118, "<button type=\"submit\" class=\"btn btn-primary edit-btn\">Add Item</button>\r\n                    ");
             }
             ));
             __builder.CloseComponent();
+            __builder.AddMarkupContent(119, "\r\n                ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(120, "\r\n            ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(121, "\r\n        ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(122, "\r\n    ");
             __builder.CloseElement();
+            __builder.AddMarkupContent(123, "\r\n");
 #nullable restore
 #line 77 "C:\Users\alist\OneDrive\Documents\GitHub\StBarnabasHospiceTable\StBarnabasHospiceTable\StBarnabasHospiceTable\Client\Pages\ListItems.razor"
 }

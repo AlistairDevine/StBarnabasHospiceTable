@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "StBarnabasHospiceTable.Client.dll": "sha256-3Eni7I9cXGxG4v+YKpMH\/IB2kVD\/OD1PPf3g4CBK1Lk=",
+      "StBarnabasHospiceTable.Client.dll": "sha256-v2iwIBDkaglYnlGJISQBHhHJ1PNv1ZQMm7gEstVimlk=",
       "System.Text.Json.dll": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-kL\/omZDwqByAi+lPdMeDmr3XjHcn4RVb+LmZ4mut1Yc=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -46,7 +46,7 @@
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-m7Q+cF5\/ji3OMfdGlCuE8pQ\/iM+kxNHLq\/IEWVvIaOg=",
       "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
-      "StBarnabasHospiceTable.Shared.dll": "sha256-aSlmDZFnIPGEPb8kSWCsmQcjK\/w28WXxMGODFAP5Dp4=",
+      "StBarnabasHospiceTable.Shared.dll": "sha256-kgZTnVtqqonbxQpdlzSiTAjiJK574rH28gEHm5c8Z\/c=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-oK1Bjv95fH+hSbogUkJE+xDAI203kJG6lL6Sm\/NuPWg=",
       "Microsoft.Extensions.Primitives.dll": "sha256-y\/FyJQOcW2TOcTp7Iuv8brGBzL5ZP0oJdG7ysK+gtKc=",
@@ -62,8 +62,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "StBarnabasHospiceTable.Client.pdb": "sha256-zWhgm9tXwql9TKMYtdZlNV9MKwreVp3QAzYhsx2kFYw=",
-      "StBarnabasHospiceTable.Shared.pdb": "sha256-vj+0kJWyhMFw\/Wi+UEjBFqqA9b7bdib5JZwpTEj073E="
+      "StBarnabasHospiceTable.Client.pdb": "sha256-bZcY+vsfXJGTh+YMSUY1\/+lFNNd5koaSU3MMiZ0BUzg=",
+      "StBarnabasHospiceTable.Shared.pdb": "sha256-tcfpR4Eu1R7IsOYSuaLJH7O\/SPV9zKZtwcfzouLfT+0="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",
